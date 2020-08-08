@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Build School</title>
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&family=Noto+Serif+TC:wght@900&family=Varela+Round&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: outside;
+
+        }
+
+        div[class^="col-"] {
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        li,
+        nav {
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        p {
+            font-family: 'Noto Sans TC', sans-serif;
+            text-align: left;
+            padding: 5px;
+        }
+
+
+        /* ------------------頂部logo------------------- */
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(172, 172, 172, .2);
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            left: 0;
+            top: 0;
+        }
+        .logo img {
+            width: 55px;
+            height: 60px;
+            margin: 10px;
+        }
+
+        .txt {
+            color: #fff;
+            padding: 25px;
+            /* height: 110px; */
+        }
+        .txt h1 {
+            font-family: 'Varela Round', sans-serif;
+         /*    padding-top: 15px; */
+
+        }
+        .txt p {
+            font-size: 12px;
+            text-align: center;
+        }
+
+
+
+        /* -----------------幻燈片圖片------------------ */
+        .promo {}
+
+        /* ------------------超大橫排雙格---------------- */
+
+        .text {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .text img {
+            width: 100px;
+        }
+
+        /* ----------------橫向標語------------------- */
+
+        .blue {
+            text-align: center;
+            padding: 60px;
+            background: url("bs-assets/Taiwan.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+
+        .blue h3 {
+            background-color: rgba(94, 94, 94, 0.6);
+        }
+
+        /* ---------------------橫向四格-------------------- */
+
+        .box {
+            padding-top: 30px;
+            text-align: center;
+            padding-bottom: 60px;
+        }
+
+        .box .hp-4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box .hp-2,
+        .box2 .hp-3 {
+            display: flex;
+            text-align: left;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .box h3 {
+            color: rgb(255, 73, 53)
+        }
+
+        .box img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .box2 {
+            padding-top: 30px;
+            text-align: center;
+            padding-bottom: 80px;
+        }
+
+        .box2 .hp-1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box2 img {
+            height: 80px;
+        }
+
+        /* ------------------------各公司logo------------------- */
+        .pic-group {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .pic img {
+            height: 60px;
+        }
+
+        /* ----------------------修飾底線----------------------- */
+        .underline {
+            border: 3px solid #aaa;
+            background-color: #aaa;
+        }
+
+        /*-----------------------底部資訊---------------------- */
+        .info h3 {
+            font-size: 20px;
+        }
+
+        .info h4 {
+            font-size: 20px;
+        }
+
+        .info h5 {
+            font-size: 14px;
+        }
+
+        .info {
+            padding: 30px;
+        }
+
+        /* ---------------------設定不同設備的呈現---------------- */
+
+        .menu a {
+            text-decoration: none;
+            padding-left: 30px;
+            color: #fff;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .menu a:hover {
+            color: #57bbbf;
+            transition: .5s;
+        }
+
+        .menu-box .menu {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 0%;
+            background-color: rgba(102, 102, 102, 0.521);
+            display: block;
+            transform: scale(1);
+            /* transition: border-radius .2s, transform .2s .2s cubic-bezier(0.6, -0.28, 0.735, 0.045); */
+            z-index: 99;
+        }
+
+        .menu-box .menu span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border: 1px solid #FFF;
+            background-color: white;
+            margin: auto;
+            width: 32px;
+            height: 1px;
+            transition: .5s;
+        }
+
+        .menu-box .menu span:first-child {
+            transform: translateY(-6px);
+        }
+
+        .menu-box .menu span:last-child {
+            transform: translateY(6px);
+        }
+
+        #menu-control {
+            display: none;
+        }
+
+        #menu-control:checked~.menu-box {
+            background-color: seagreen;
+            border-radius: 50%;
+
+        }
+
+        #menu-control:checked~.menu-box span:first-child {
+            transform: translateY(0px) rotate(45deg);
+        }
+
+        #menu-control:checked~.menu-box span:last-child {
+            transform: translateY(0px) rotate(135deg);
+        }
+
+        #menu-control:checked~.menu-box span:nth-child(2) {
+            display: none;
+        }
+
+        .menu-box nav {
+            position: fixed;
+            width: 80%;
+            top: 60px;
+            height: calc(100vh - 60px);
+            bottom: 0;
+            left: -100%;
+            background-color: rgba(102, 102, 102, 0.9);
+            transition: left 1s .2s;
+            overflow: auto;
+            z-index: 99;
+        }
+
+        .menu-box nav a {
+            display: block;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            color: #FFF;
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+
+        #menu-control:checked~nav {
+            left: 0;
+        }
+
+        /*        @media screen and (max-width: 768px) {
+
+            .top .menu nav {
+                display: none;
+            }
+
+        }
+
+        @media screen and (min-width: 769px) {
+            .menu-box {
+                display: none;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="menu-box d-lg-none">
+        <input type="checkbox" name="" id="menu-control">
+        <label class="menu" for="menu-control">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <a href="#">台北班簡介</a>
+            <a href="#">新竹班簡介</a>
+            <a href="#">中華大學校內簡介</a>
+            <a href="#">歷屆老師</a>
+            <a href="#">關於</a>
+            <a href="#">問題及洽詢</a></nav>
+    </div>
+    <div class="top">
+        <div class="banner">
+            <div class="logo"><img src="bs-assets/asset 0.png" alt=""></div>
+            <div class="txt">
+                <h1>Build School</h1>
+                <p>developer career builder</p>
+            </div>
+            <div class="menu row d-none d-lg-block">
+                <nav>
+                    <a href="#">台北班簡介</a>
+                    <a href="#">新竹班簡介</a>
+                    <a href="#">中華大學校內簡介</a>
+                    <a href="#">Blog</a>
+                    <a href="#">歷屆老師</a>
+                    <a href="#">關於</a>
+                    <a href="#">問題及洽詢</a>
+                </nav>
+            </div>
+        </div>
+        <div class="promo">
+            <div class="owl-carousel owl-theme">
+                <div><img src="https://picsum.photos/1300/1200/?random=1"></div>
+                <div><img src="https://picsum.photos/1300/1300/?random=2"></div>
+                <div><img src="https://picsum.photos/1300/1300/?random=3"></div>
+                <div><img src="https://picsum.photos/1300/1300/?random=4"></div>
+                <div><img src="https://picsum.photos/1300/1300/?random=5"></div>
+                <div><img src="https://picsum.photos/1300/1300/?random=6"></div>
+                <div><img src="https://picsum.photos/1300/1300/?random=7"></div>
+                <div><img src="https://picsum.photos/1300/1300/?random=8"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row mx-auto">
+            <div class="text col-xl-6 col-md-12">
+                <img src="bs-assets/a1.png">
+                <h1>Build School</h1>
+                <h1>/*我們的理念*/</h1>
+                <br>
+                <p>Build = 將程式碼編譯及建置成 <u>可執行的軟體</u> </p>
+                <p>Build = <u>
+                        動手做</u></p>
+                <p>Build = 軟體開發 <u> 職涯的打造者</u></p>
+            </div>
+            <div class="text col-xl-6 col-md-12">
+                <h2>實作及就業導向的軟體開發學校</h2><br>
+                <p>因應數位新時代的來臨，軟體、App、IoT
+                    、SaaS、雲端平台的應用需求大爆炸，軟體工程師的招募需求持續上升，以2016年5月求職平台的統計資料，從高科技、電商、金融、傳產、網路服務、軟體資訊、新創等各行業，台灣至少有 27,000
+                    位軟體開發工程師的職缺，甚至日本、新加坡等軟體及App 外商也來台灣求才。<br>
+                    為了彌補企業求才所需技能及實務教學上的落差，我們將前進校園，幫助想搭上軟體開發及互聯網經濟這艘火箭的同學們，打造更有競爭力的職涯!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text col-xl-6 col-md-12"><img src="bs-assets/a2.png">
+                <h1>動手實作才是真學習</h1>
+            </div>
+            <div class="text col-xl-6 col-md-12">
+                <h2>打造專案作品的學習方式</h2>
+
+                <h3>(Project-based Learning)</h3><br>
+                <p>透過身經百戰的實務講師、各大企業的資深軟體工程師或CTO，帶領同學實作一個真正能運作的產品開發，解決真實世界的問題，透過專題過程中的實作，培養解決問題的能力，這裏不只是程式教學或教育訓練，學的不只是技能，而是
+                    Learn how to learn，以因應變化多端的軟體開發技能，及自我尋找解答的能力。</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text col-xl-6 col-md-12"><img src="bs-assets/a3.png">
+                <h1>就業銜接</h1>
+            </div>
+            <div class="text col-xl-6 col-md-12">
+                <h2>真正企業職場所需技能</h2>
+
+                <h3> (Career Readiness)</h3>
+                <br>
+
+                <p>除了透過打造專題作品過程，學到了技術及硬技能外，不同於一般的軟體培訓，我們更加入了簡報技巧、履歷及面試準備、以及真正軟體開發的團隊溝通及運作，這些軟實力 (Soft-Skill)
+                    的培養，讓同學能提早做好準備，在職場上成為一位專業的軟體工程師!</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="text col-xl-6 col-md-12"><img src="bs-assets/a4.png">
+                <h1>連結及影響力</h1>
+            </div>
+            <div class="text col-xl-6 col-md-12">
+                <h2>企業導師的連結</h2>
+
+                <h3>(Mentor Network)</h3>
+                <br>
+                <p>每一位在軟體開發上有實務經驗的企業導師，他們是各大企業的主管、資深軟體工程師或 CTO，其人際連結及資源將帶給同學更多更好的就業機會，你將比別人站得更高，看得更遠!</p>
+            </div>
+        </div>
+    </div>
+    <div class="blue">
+        <h3>18 - 24週的實作及作品開發 - 從訓練、就業、到企業連結</h3>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="box col-xl-3 col-md-12">
+                <div class="col-12">
+                    <h2>第 1 - 4 個月</h2>
+                </div>
+                <div class="col-12"><img src="bs-assets/asset 27.svg" alt=""></div>
+                <div class="col-12">
+                    <h3>程式基礎教學</h3>
+                </div>
+
+                <div class="col-12">
+                    <ul>
+                        <li>業界實戰講師</li>
+                        <li>企業主管/創業家/CTO 演講</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box col-xl-3 col-md-12">
+                <div class="col-12">
+                    <h2>第 5 - 6 個月</h2>
+                </div>
+                <div class="col-12"><img src="bs-assets/asset 29.svg" alt=""></div>
+                <div class="col-12">
+                    <h3>作品導向實作</h3>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li>Web / App 作品開發 - 企業導師指導</li>
+                        <li>不只是 Demo - 真實可運作成果</li>
+                        <li>團隊開發 - 真實軟體開發團隊的運作及分工 (Agile 敏捷, kanban 看板, CI 自動化建置 ...)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box col-xl-3 col-md-12">
+                <div class="col-12">
+                    <h2>第 6 - 7 月</h2>
+                </div>
+                <div class="col-12"><img src="bs-assets/asset 30.svg" alt=""></div>
+                <div class="col-12">
+                    <h3>作品發表</h3>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li>簡報及溝通技巧</li>
+                        <li>作品及程式碼講解</li>
+                        <li>個人履歷準備 – Github, codepen …</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box col-xl-3 col-md-12">
+                <div class="col-12">
+                    <h2>未來及展望</h2>
+                </div>
+                <div class="col-12"><img src="bs-assets/a5.png" alt=""></div>
+                <div class="col-12">
+                    <h3>就業及企業導師諮詢</h3>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li>就業媒合或未來職涯諮詢</li>
+                        <li>企業導師 -人際連結及資源</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blue">
+        <h3>在課程及作品實作中，將採用這些工具 - 熟悉實務上軟體開發團隊的運作、分工及真實專案的流程 </h3>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="box2  col-xl-3 col-md-12">
+                <div class="col-12"><img src="bs-assets/a6.png" alt=""></div>
+                <div class="col-12"><img src="bs-assets/a7.png" alt=""></div>
+                <div class="col-12">
+                    <h3>版本控管及程式碼管理
+                    </h3>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li>學員之練習及作品之程式碼，皆採用主流的 git 當版本控管，熟悉版控的各種操作及實務專案運用; 課程中公開之練習程式碼，提交至 GitHub 上，其它學員可參考或供講師
+                            Code
+                            Review
+                            檢閱，並熟悉 Open Source 生態及工具</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="box2  col-xl-3 col-md-12">
+                <div class="col-12"><img src="bs-assets/a8.png" alt=""></div>
+                <div class="col-12"><img src="bs-assets/a9.png" alt=""></div>
+                <div class="col-12">
+                    <h3>作品開發及團隊管理</h3>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li>除了使用 GitHub 外，專題開發階段也將使用 Microsoft Azure DevOps Services (原名Visual Studio Team
+                            Services)
+                            進行團隊開發、包括程式碼管理、工作項目追蹤、自動化建置等，熟悉一個軟體開發專案之流程、分工及日常工作。</li>
+                        <li>也可透過目前許多開發團隊常用的專案管理及看板工具 - Trello，進行工作分派、追蹤、或整個班的工作事項管理</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box2  col-xl-3 col-md-12">
+                <div class="col-12"><img src="bs-assets/a10.png" alt=""></div>
+                <div class="col-12"><img src="bs-assets/a11.png" alt=""></div>
+                <div class="col-12">
+                    <h3>雲端平台及服務</h3>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li>雲端平台的使用已逐漸成為一個成熟軟體開發團隊之基礎，並讓開發、測試、佈署工作更加的便利及自動化。因此學員將使用 Microsoft Azure
+                            當成作品及專案應用系統執行的雲端平台，包括
+                            Azure
+                            App Service 建立網站服務、Azure SQL Database 建立資料庫服務</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="box2 col-xl-3 col-md-12">
+                <div class="col-12"> <img src="bs-assets/a12.png" alt=""></div>
+                <div class="col-12"> <img src="bs-assets/a13.png" alt=""></div>
+                <div class="col-12">
+                    <h3>團隊溝通協作及通知</h3>
+                </div>
+                <div class="col-12">
+                    <ul>
+                        <li>課程過程中的線上討論、遠端溝通、或技術分享，將可透過 Microsoft Teams 或Slack 工具。另外練習的程式碼提交至 GitHub、或是 Trello
+                            上的工作狀態更新，或是
+                            Azure
+                            DevOps 上自動化建置的狀態，皆可發通知至 Microsoft Teams 或 Slack，透過自動化提升工作效率，並熟悉一個軟體開發團隊的協同合作</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="blue">
+        <h3>我們的講師及企業導師擁有在這些公司的工作經歷、擔任主管或資深工程師 </h3>
+
+    </div>
+
+    <div class="container pic-group">
+        <div class="row">
+            <div class="col-xl-6 col-md">
+                <div class="row">
+                    <div class="col-xl-6 col-md">
+                        <div class="pic"><img src="bs-assets/a21.png" alt="" class="rounded-sm"></div>
+                        <div class="pic"><img src="bs-assets/a15.png" alt="" class="rounded-sm"></div>
+                    </div>
+                    <div class="col-xl-6 col-md">
+                        <div class="pic"><img src="bs-assets/a14.png" alt="" class="rounded-sm"></div>
+                        <div class="pic"><img src="bs-assets/a16.png" alt="" class="rounded-sm"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-md">
+                <div class="row">
+                    <div class="col-xl-6 col-md">
+                        <div class="pic"><img src="bs-assets/a17.png" alt="" class="rounded-sm"></div>
+                        <div class="pic"><img src="bs-assets/a19.png" alt="" class="rounded-sm"></div>
+                    </div>
+                    <div class="col-xl-6 col-md">
+                        <div class="pic"><img src="bs-assets/a18.png" alt="" class="rounded-sm"></div>
+                        <div class="pic"><img src="bs-assets/a20.png" alt="" class="rounded-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="underline"></div>
+    <div class="container">
+        <div class="row">
+            <div class="info col-xl-6 ">
+                <h3>合作及接洽</h3>
+                <h4>有興趣軟體工程師徵才、或成為我們的講師或擔任指導學生的企業導師 (Inspire Mentor)，請與我們連絡</h4>
+                <nav>email: contact@build-school.com 電話: 02-66057606</nav>
+
+                ​<h5>台北: 台北市忠孝東路三段96號11F-1 (台北科大對面/忠孝新生站3號出口)</h5>
+
+                <h5>新竹: 中華大學行政大樓圖資處</h5>
+            </div>
+            <div class="info2 col-xl-6"></div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                lazyLoad: true,
+                loop: true,
+                margin: 10,
+                center: true,
+            });
+        });
+    </script>
+</body>
+
+</html>

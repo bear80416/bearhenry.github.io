@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多吃蔬菜多健康</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Merienda+One&family=Righteous&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            list-style: none;
+        }
+
+        .promo {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 1;
+            display: none;
+        }
+
+
+        .close {
+            width: 45px;
+            height: 45px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            z-index: 1;
+            text-align: center;
+            font-size: 45px;
+        }
+
+        .close:active {
+            outline: none;
+        }
+
+
+
+        .promo .box {
+            background: url("img/asset42.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            position: fixed;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        body a {
+            text-decoration: none;
+            font-family: 'Acme', sans-serif;
+        }
+
+        h1 {
+            font-size: 80px;
+            font-family: 'Righteous', cursive;
+        }
+
+        h2 {
+            font-family: 'Merienda One', cursive;
+        }
+
+        p {
+            font-family: 'Acme', sans-serif;
+        }
+
+        .sale70 {
+            height: 2px;
+            display: flex;
+            background-color: hsl(120, 25%, 42%);
+            justify-content: space-between;
+            padding: 30px;
+            align-items: center;
+            color: #fff;
+
+        }
+
+        .sale70 .text-group {
+            display: flex;
+
+        }
+
+        .sale70 .text1 {
+            border-right: 1px solid #fff;
+        }
+
+        .sale70 .text {
+            padding-right: 20px;
+            padding-left: 20px;
+            font-size: 12px;
+        }
+
+        .sale70 .text :hover {
+            color: green;
+            transition: .5s;
+        }
+
+        .sale70 a {
+            color: #fff;
+        }
+
+        .naturio {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            align-items: center;
+            padding-left: 50px;
+            padding-right: 30px;
+        }
+
+        .naturio .text-group a {
+            padding-right: 50px;
+            color: #aaa;
+        }
+
+        .naturio .text-group a:hover {
+            color: hsl(120, 25%, 42%);
+        }
+
+        .green {
+            height: 750px;
+            background: url("img/asset36.png");
+            background-size: 145%;
+            background-position: left;
+            position: relative;
+        }
+
+        .green .text-group {
+            left: 90px;
+            top: 190px;
+            position: absolute;
+        }
+
+        .green span {
+            color: hsl(120, 25%, 42%);
+        }
+
+        .welcome {
+            padding: 50px;
+
+        }
+
+        .welcome .bottom {
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        .welcome .top h1 {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .welcome .text {
+
+            width: 350px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .tw20p {
+            justify-content: center;
+            display: flex;
+        }
+
+
+
+        .ourpro {
+            margin: 50px;
+
+        }
+
+        .ourpro .sale {
+            border: 1px solid red;
+            color: #fff;
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            margin: auto;
+            background-color: red;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 13px;
+            padding-bottom: 13px;
+        }
+
+        .ourpro .featured {
+            border: 1px solid rgb(78, 131, 0);
+            color: #fff;
+            width: 70px;
+            height: 25px;
+            text-align: center;
+            margin: auto;
+            background-color: rgb(78, 131, 0);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 13px;
+            padding-bottom: 13px;
+        }
+
+        .ourpro .text-group {
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+
+        }
+
+        .ourpro .text {
+            padding: 5px;
+            position: relative;
+        }
+
+        .ourpro .img {
+            border: 1px solid rgb(231, 231, 231);
+
+        }
+
+        .fruits {
+            height: 700px;
+            background: url("img/asset37.png");
+            background-size: 140%;
+            background-position: center;
+
+        }
+
+        .fruits .text-group {
+            text-align: center;
+            padding: 100px;
+        }
+
+
+        .heart {
+            margin: auto;
+            display: flex;
+            height: 700px;
+        }
+        .heart .pic{
+            width: 50%;
+
+        }
+        .heart .text-group{
+            width: 100%;
+        }
+
+        .blog {
+            padding-top: 70px;
+            text-align: center;
+        }
+
+        .blog .top {
+            height: 100px;
+            background-image: url("img/asset38.png");
+            background-position: top center;
+
+        }
+
+        .blog .bottom {
+            height: 100px;
+            background-image: url("img/asset38.png");
+            background-position: bottom center;
+        }
+
+        .blog .middle {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .blog .text-group {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .blog .text {
+            padding: 20px;
+
+        }
+
+        .blog p {
+
+            margin: auto;
+            width: 200px;
+            border: 1px solid rgb(78, 131, 0);
+            color: rgb(78, 131, 0);
+        }
+
+        .blog p:hover {
+            border: 1px solid rgb(78, 131, 0);
+            background-color: rgb(78, 131, 0);
+            color: white;
+            transition: .5s;
+        }
+
+        .cold {}
+
+        .cold .text-group {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .cold .text {
+            text-align: start;
+
+        }
+
+        .cold img {
+            border: 1px solid rgb(231, 231, 231);
+        }
+
+        .our {
+            height: 400px;
+            background: url("img/asset39.png");
+            background-size: 140%;
+            background-position: center;
+            text-align: center;
+            margin: auto;
+            padding-top: 200px;
+        }
+
+        .our img {
+            border-radius: 1px solid #fff;
+
+        }
+
+        .subscribe {
+            height: 300px;
+            text-align: center;
+        }
+
+        .end {
+            height: 270px;
+            background: url("img/asset41.png");
+            background-size: 140%;
+            background-position: top;
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            padding-top: 90px;
+        }
+
+        .end a {
+            color: #aaa;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="promo">
+        <buttom class="close">X
+        </buttom>
+        <div class="box"></div>
+    </div>
+    <div class="sale70">
+        <div class="text-group">
+            <p>Last sale up to <strong>20%</strong> OFF. Use code <strong>“SALE70”</strong> .</p>
+        </div>
+        <div class="text-group">
+            <div class="text text1"><a href="#">COMPARE</a></div>
+            <div class="text text1"><a href="#">WISHLIST</a></div>
+            <div class="text text1"><a href="#">LOGIN</a></div>
+            <div class="text text1"><a href="#">CART</a></div>
+            <div class="text"><a href="#">TW,$</a></div>
+        </div>
+    </div>
+    <div class="naturio">
+        <div class="logo"><img src="img/asset0.png"></div>
+        <div class="text-group">
+            <nav><a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">FEATURES</a>
+                <a href="#">BLOG</a>
+                <a href="#">SHOP</a>
+                <a href="#">CONTACTS</a></nav>
+        </div>
+    </div>
+    <div class="green">
+        <div class="text-group">
+            <h1>Green Leaves <br>
+                Up To <span>20% Off</span> </h1>
+            <h2>Always Fresh, Crispy and Full of Vitamins</h2>
+        </div>
+    </div>
+    <div class="welcome">
+        <div class="text-group top">
+            <h1>Welcome to our healthy farm!</h1>
+        </div>
+        <div class="text-group bottom">
+            <div class="text"><img src="img/asset1.png" alt="">
+                <h2>Best Quality Products</h2>
+                <p>We stand for providing the most fresh organic products which will serve your health and be a source
+                    of vitamins and minerals for our clients.</p>
+            </div>
+            <div class="text"><img src="img/asset2.png" alt="">
+                <h2>Farmer Products</h2>
+                <p>We work with many farms to provide you with natural products grown with love and care with no GMO or
+                    pesticides.</p>
+            </div>
+            <div class="text"><img src="img/asset3.png" alt="">
+                <h2>Fast Delivery</h2>
+                <p>We want our client to receive their fresh products as soon as possible, so we process and ship the
+                    order at once.</p>
+            </div>
+        </div>
+    </div>
+    <div class="tw20p">
+        <img src="img/asset4.png" alt="">
+        <img src="img/asset5.png" alt=""></div>
+    <div class="ourpro">
+        <div class="text-group">
+            <div class="text">
+                <h2>Our Products</h2>
+            </div>
+        </div>
+        <div class="text-group">
+            <div class="text">
+                <h4>NEW ARRIVALS</h4>
+            </div>
+            <div class="text">
+                <h4>ORGANIC & NATURAL</h4>
+            </div>
+            <div class="text">
+                <h4>THE FARM STORY</h4>
+            </div>
+            <div class="text">
+                <h4>PLUM CAKE</h4>
+            </div>
+        </div>
+        <div class="text-group">
+            <div class="text">
+                <div class="sale">
+                    <p>SALE!</p>
+                </div>
+                <div class="img"><img src="img/asset6.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable,Fruit</h5>
+                    <h6>Orangic Beetroot</h6>
+                    <p><span style="text-decoration:line-through">4.99$</span> 2.56$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset7.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Fruit,Packaged Meals,Baking</h5>
+                    <h6>Orangic Cauliflower</h6>
+                    <p>7.88$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset8.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable,Fruit</h5>
+                    <h6>Orangic Fennel</h6>
+                    <p>4.81$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="featured">
+                    <p>FEATURED</p>
+                </div>
+                <div class="img"><img src="img/asset9.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable</h5>
+                    <h6>Orangic Jap Pumpkin 1kg</h6>
+                    <p>9.88$</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-group">
+            <div class="text">
+                <div class="img"><img src="img/asset10.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable,Fruit</h5>
+                    <h6>Orangic Beetroot</h6>
+                    <p>4.99$ 2.56$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="featured">
+                    <p>FEATURED</p>
+                </div>
+                <div class="img"><img src="img/asset11.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Fruit,Packaged Meals,Baking</h5>
+                    <h6>Orangic Cauliflower</h6>
+                    <p>7.88$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset12.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable,Fruit</h5>
+                    <h6>Orangic Fennel</h6>
+                    <p>4.81$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset13.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable</h5>
+                    <h6>Orangic Jap Pumpkin 1kg</h6>
+                    <p>9.88$</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fruits">
+        <div class="text-group">
+
+            <h1>Fruits and Vegetables</h1>
+            <h2>Fresh and Delicious All Year Round!</h2>
+        </div>
+
+    </div>
+    <div class="heart">
+        <div class="pic"><img src="img/asset29.png" alt=""></div>
+        <div class="text-group">
+            <div class="text">
+                <h2>
+                    A Source of Vitamins
+                </h2>
+                <p>Vegetables can be eaten either raw or cooked and play an important role in human nutrition, being
+                    mostly low in fat and carbohydrates, but high in vitamins, minerals and dietary fiber.</p>
+            </div>
+            <div class="text">
+                <h2>
+                    Best Quality Products
+                </h2>
+                <p>“We eliminated any possible pollution in our soils in order to deliver the purest organic produce to
+                    our customers’ tables.“</p>
+            </div>
+            <div class="text">
+                <h2>
+                    Best Quality Products
+                </h2>
+                <p>“We eliminated any possible pollution in our soils in order to deliver the purest organic produce to
+                    our customers’ tables.“</p>
+            </div>
+        </div>
+    </div>
+    <div class="blog">
+        <div class="top"></div>
+        <div class="middle">
+            <div class="text">
+                <h2>Latest from the Blog</h2>
+            </div>
+            <div class="text-group">
+                <div class="text"><img src="img/asset30.png" alt="">
+                    <p>YOUR HEALTH</p>
+                    <h6>Health Benefits of a Raw Food</h6>
+                    <h5>October 23, 2017Comments: 0Posted by admin</h5>
+                </div>
+                <div class="text"><img src="img/asset31.png" alt="">
+                    <p>YOUR HEALTH</p>
+                    <h6>The Anytime Snack Pack for Everyone</h6>
+                    <h5>October 23, 2017Comments: 1Posted by admin</h5>
+                </div>
+                <div class="text"><img src="img/asset32.png" alt="">
+                    <p>YOUR HEALTH</p>
+                    <h6>6 After-School Snacks the Kiddos Will Love</h6>
+                    <h5>October 23, 2017Comments: 2Posted by admin</h5>
+                </div>
+            </div>
+            <div class="bottom"></div>
+        </div>
+
+    </div>
+    <div class="cold">
+        <div class="text-group">
+            <div class="text">
+                <h2>Cold Cereal</h2>
+            </div>
+            <div class="text">
+                <h2>Cold Cereal</h2>
+            </div>
+            <div class="text">
+                <h2>Cold Cereal</h2>
+            </div>
+        </div>
+        <div class="text-group">
+            <div class="text">
+                <div class="img"><img src="img/asset6.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic, Vegetable, Fruit</h5>
+                    <h6>Organic Beetroot</h6>
+                    <p><span style="text-decoration:line-through">4.99$</span> 2.56$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset6.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic, Vegetable, Fruit</h5>
+                    <h6>Organic Beetroot</h6>
+                    <p><span style="text-decoration:line-through">4.99$</span> 2.56$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset6.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic, Vegetable, Fruit</h5>
+                    <h6>Organic Beetroot</h6>
+                    <p><span style="text-decoration:line-through">4.99$</span> 2.56$</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-group">
+            <div class="text">
+                <div class="img"><img src="img/asset7.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic, Fruit, Packaged Meals, Baking</h5>
+                    <h6>Organic Cauliflower</h6>
+                    <p>7.88$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset7.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic, Fruit, Packaged Meals, Baking</h5>
+                    <h6>Organic Cauliflower</h6>
+                    <p>7.88$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset7.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic, Fruit, Packaged Meals, Baking</h5>
+                    <h6>Organic Cauliflower</h6>
+                    <p>7.88$</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-group">
+            <div class="text">
+                <div class="img"><img src="img/asset14.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable</h5>
+                    <h6>Bob's Red Mill</h6>
+                    <p>32.88$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset14.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable</h5>
+                    <h6>Bob's Red Mill</h6>
+                    <p>32.88$</p>
+                </div>
+            </div>
+            <div class="text">
+                <div class="img"><img src="img/asset14.png" alt=""></div>
+                <div class="info">
+                    <h5>Organic,Vegetable</h5>
+                    <h6>Bob's Red Mill</h6>
+                    <p>32.88$</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="our">
+        <div class="text-group">
+            <div class="text">
+                <h2>Our Clients Testimonials</h2>
+                <img src="img/asset33.png" alt="">
+                <p>66</p>
+            </div>
+        </div>
+    </div>
+    <div class="subscribe">
+        <div class="text">
+            <h2>Subscribe Newsletter</h2>
+        </div>
+        <div class="text-group">
+        </div>
+    </div>
+    <div class="end">
+        <div class="group">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#"> New Products</a></li>
+                <li><a href="#"> Our Stores</a></li>
+                <li><a href="#"> Top sellers</a></li>
+                <li><a href="#"> Uncategorized</a></li>
+                <li><a href="#"> Your Health</a></li>
+            </ul>
+        </div>
+        <div class="group">
+            <h2>Information</h2>
+            <ul>
+                <li><a href="#"> Home</a></li>
+                <li><a href="#"> About</a></li>
+                <li><a href="#"> Blog</a></li>
+                <li><a href="#"> Shop</a></li>
+                <li><a href="#"> Contacts</a></li>
+
+        </div>
+        <div class="group">
+            <h2>My account</h2>
+            <ul>
+                <li><a href="#"> Checkout</a></li>
+                <li><a href="#"> Compare</a></li>
+                <li><a href="#"> My account</a></li>
+                <li><a href="#"> Wishlist</a></li>
+
+            </ul>
+        </div>
+        <div class="group">
+            <h2>Store Information</h2>
+            <ul>
+                <li><a href="#"> Address: 4578 Marmora Road, Glasgow</a></li>
+                <li><a href="#"> Phones: +3(800) 2345-6789:
+                        +3(800) 2345-6790</a></li>
+                <li><a href="#"> Hours: 7 Days a week from 9:00
+                        am to 7:00 pm</a></li>
+                <li><a href="#"> E-mail: info@demolink.org</a></li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
