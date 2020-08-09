@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
     <title>iPad</title>
     <style>
         span {
@@ -27,25 +27,47 @@
     <!-- --------------1----------------- -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto align-items-center">
-                <li class="nav-item mr-4 ml-4"><a class="nav-link h4" href="#"><img src="/Apple/img/logo.png" alt=""
-                            width="18" height="22"></a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">Mac</a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">iPad</a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">iPhone</a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">Watch</a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">TV</a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">Music</a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">支援服務</a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">搜尋</a></li>
-                <li class="nav-item mr-4 ml-4"><a class="nav-link" href="#">購物車</a></li>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="/computer/img/market.png" alt="" width="30" height="30">
+                    </a>
+
+                    <div class="dropdown-menu border-0 rounded-0" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">開發者介紹</a>
+                        <a class="dropdown-item" href="#">你喜歡冰淇淋嗎?</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">問題回報</a>
+                    </div>
+                </li>
+                <li class="navbar-item dropdown active">
+                    <a class="nav-link ml-3" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" >
+                        Apple<span class="sr-only">(current)</span>
+                    </a>
+                    <div class="dropdown-menu border-0 rounded-0" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/cal/cal.html">行事曆</a>
+                        <a class="dropdown-item" href="/computer/computer.html">計算機</a>
+                        <a class="dropdown-item" href="#">口罩地圖</a>
+                    </div>
+                </li>
             </ul>
+        </div>
+
+                <button class="btn" data-container="body" data-toggle="popover" data-placement="left" data-content="EAT ME!">
+                    <a class="navbar d-flex " href="#"><img src="/computer/img/ice-cream.png" width="30" height="30" class="" alt=""
+                loading="lazy"></a>
+                  </button>
     </nav>
+    <!-- ----------------------上方導覽------------------------- -->
 
     <!-- --------------2----------------- -->
 
@@ -226,7 +248,7 @@
 
                 colorDiv.classList.add('col-6');
                 colorDiv.classList.add('col-md-4');
-                
+
                 colorDiv.classList.add('color-btn');
                 colorDiv.classList.add('btn');
                 colorDiv.classList.add('btn-outline-dark');
