@@ -11,7 +11,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
 
-    <title>冰淇淋附設披薩店 | Pizza</title>
+    <title>new</title>
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
@@ -45,8 +45,7 @@
                 </li>
                 <li class="navbar-item dropdown active">
                     <a class="nav-link ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        冰淇淋附設披薩店<span class="sr-only">(current)</span>
-                        <img src="/pizza/img/pizza.png" alt="" width="20" height="20">
+                        1A2B | 我猜猜猜<span class="sr-only">(current)</span>
                     </a>
                     <div class="dropdown-menu border-0 rounded-0" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/computer/computer.html">計算機</a>
@@ -68,88 +67,60 @@
     <!-- ----------------------上方導覽------------------------- -->
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 col">
+        <div class="row justify-content-center">
+            <div class="col-3 bg-light">
+                <h1>遊戲說明</h1>
+                <ul>
+                    <li>電腦從0~9 亂數挑選4 的不重複的數字，讓使用者猜。</li>
+                    <li> 如果玩家猜測的某一個數字和電腦挑選的相同，但順序不同，則以B 表示；若是該數字連順序都相同則以A 表示。
+                    <li> 4A及代表遊戲成功結束。</li>
+                </ul>
+                <h2>例如</h2>
+                <ul>
+                    <li> 電腦挑出的數字為5461</li>
+                    <li> 玩家猜5038，則為1A0B</li>
+                    <li> 玩家猜5048，則為1A1B</li>
+                    <li> 玩家猜9872，則為0A0B</li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <div class="col-12 d-flex justify-content-between">
+                    <button class="btn btn-dark" onclick="getRamdon()">遊戲開始</button>
+                    <button class="btn btn-dark">重來</button>
+                    <button class="btn btn-dark">看答案</button>
+                </div>
 
+                <div class="col-12 mt-4"><label for="keyNum">輸入數字</label>
+                    <input class="form-control" type="text" name="" id="keyNum"></div>
+
+
+                <div class="col-12 mt-5 bg-light h-100 flow-auto">
+                    <h1>遊戲歷程</h1>
+                    <div class="col-12" id="history">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <template>
 
 
-    </template>
-    <!-- ------------------------跳出視窗---------------------------- -->
+    <script>
+        let history = document.getElementById('history');
+        var hs = '';
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-        詳細內容
-    </button>
+        function getRamdon() {
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-        </div>
-    </div>
+            hs = '尚未開放遊玩';
 
+            history.innerText = hs;
 
-    <script type="module">
-        import {$g} from '/pizza/data/helpers.js';
-    const url = 'https://raw.githubusercontent.com/TimChen0409/FileStorage/master/Pizza.json';
-
-    let row = $g('row');
-    let xhr = new XMLHttpRequest();
-    let msg = document.querySelectorAll('msg');
-
-    window.onload = function(){
-        requestJSON();
-    }
-
-    var pizzaObject;
-    function requestJSON(){
-        xhr.onload = function(){ 
-        pizzaObject = JSON.parse(this.responseText);
-        const  titleArray = Object.keys(pizzaObject.pizza);
-
-        for (let i = 0 ; i<titleArray.length;i++)
-        {
-            const dataArray = Object.Values(pizzaObject.pizza[i]);
-            addCard(dataArray)
         }
-        }
-         xhr.open('GET',url);
-         xhr.send();
-
-    }
-
-    function addCard(pizzaArray){
-        let card = $g('#cardPizza');
-        let cloneContent = card.content.cloneNode(true);
+    </script>
 
 
 
-    }
-
-
-
-
-</script>
 
 
     <!-- Optional JavaScript -->
