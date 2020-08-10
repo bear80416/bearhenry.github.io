@@ -87,7 +87,8 @@
                 <div class="col d-flex justify-content-between">
                     <button class="btn btn-dark" onclick="getRamdon()">遊戲開始</button>
                     <button class="btn btn-dark" onclick="reset()">重來</button>
-                    <button class="btn btn-dark" onclick="ans()"data-trigger="hover" data-toggle="popover" data-placement="bottom" data-content="需花費50步">看答案</button>
+                    <button class="btn btn-dark" onclick="ans()" data-trigger="hover" data-toggle="popover"
+                        data-placement="bottom" data-content="需花費50步">看答案</button>
                     <button id="over" class="btn btn-danger" data-toggle="modal"
                         data-target="#exampleModal">剩餘步數:</button>
                 </div>
@@ -176,9 +177,13 @@
         let history = document.getElementById('history');
         let status = document.getElementById('status')
         var hs = '';
-        let code = '';
+        let code = [];
         let over = document.getElementById('over');
         let step = 10;
+        var turnKey;
+        let a = 0,
+            b;
+        let arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
         over.innerHTML = `剩餘步數:${step}`;
 
@@ -188,13 +193,19 @@
         }
 
         function getRamdon() {
-            
-            code = '1234';
+            arr.sort(function () {
+                return Math.random() - 0.5
+            })
+            arr.length = 4;
+            code = arr;
+            console.log(code);
             if (code.length >= 1)
                 status.innerHTML = '已取得亂數';
         }
 
         function verificationCode() {
+            a = 0;
+            b = 0;
             if (code.length < 3) {
                 status.innerText = '還沒按開始遊戲!'
             } else {
@@ -204,28 +215,32 @@
                 } else {
                     step = step - 1;
                     let playerKey = document.getElementById('keyNum').value;
+                    turnKey = Array.from(playerKey);
+                    console.log(turnKey);
                     if (playerKey.length > 4 || playerKey.length < 4) {
                         status.innerHTML = '只能輸入4個數字唷';
                     } else {
-                        hs = hs + `您輸入的數字是${playerKey} | 提示: 1A2B<br>`;
-                        history.innerHTML = hs;
+                        if (code == playerKey) {
+                            status.innerText = '成功!!!!'
+                        } else {
+                            deterAns();
+                            hs = hs + `您輸入的數字是${playerKey} | 提示: ${a}A${b}B<br>`;
+                            history.innerHTML = hs;
+                        }
                     }
-
                 }
                 over.innerHTML = `剩餘步數:${step}`;
             }
         }
 
-
-
         function reset() {
             hs = '';
             code = '';
             status.innerText = '遊戲重來'
+            history.innerHTML = hs;
         }
 
         function ans() {
-
             if (code.length < 3) {
                 status.innerText = '還沒按開始遊戲!'
             } else {
@@ -234,10 +249,25 @@
                 } else {
                     step = step - 50;
                     over.innerHTML = `剩餘步數:${step}`;
-                    history.innerText = code;
+                    history.innerText = code.join('');
+                    console.log(code.join(''));
                 }
 
             }
+        }
+
+        function deterAns() {
+
+            var i = $(code).filter(turnKey).toArray();
+            b = i.length;
+            console.log(b);
+            for (let i = 0; i <= 3; i++) {
+                if (code[i] == turnKey[i]) {
+                    a = a + 1;
+                    b = b - 1;
+                }
+            }
+
         }
     </script>
 
