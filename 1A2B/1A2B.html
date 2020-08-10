@@ -68,7 +68,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-3 bg-light">
+            <div class="col-12 col-md-3 bg-light">
                 <h1>遊戲說明</h1>
                 <ul>
                     <li>電腦從0~9 亂數挑選4 的不重複的數字，讓使用者猜。</li>
@@ -83,20 +83,20 @@
                     <li> 玩家猜9872，則為0A0B</li>
                 </ul>
             </div>
-            <div class="col-7">
-                <div class="col-12 d-flex justify-content-between">
+            <div class="col-12 col-md-7">
+                <div class="col d-flex justify-content-between">
                     <button class="btn btn-dark" onclick="getRamdon()">遊戲開始</button>
                     <button class="btn btn-dark">重來</button>
                     <button class="btn btn-dark">看答案</button>
                 </div>
 
-                <div class="col-12 mt-4"><label for="keyNum">輸入數字</label>
+                <div class="col mt-4"><label for="keyNum">輸入數字</label>
                     <input class="form-control" type="text" name="" id="keyNum"></div>
 
 
-                <div class="col-12 mt-5 bg-light h-100 flow-auto">
+                <div class="col mt-5 bg-light h-100 flow-auto">
                     <h1>遊戲歷程</h1>
-                    <div class="col-12" id="history">
+                    <div class="col" id="history">
 
                     </div>
                 </div>

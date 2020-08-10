@@ -74,10 +74,10 @@
     <!-- --------------2----------------- -->
 
     <div class="row align-items-center justify-content-center mr-4 ml-4">
-        <div class="col-5">
+        <div class="col-md-5">
             <h2>iPad</h2>
         </div>
-        <div class="col-5">
+        <div class="col-md-5">
             <div class="row justify-content-end">
                 <a href="#" class="ml-3 text-decoration-none text-dark">產品概覽</a>
                 <a href="#" class="ml-3 text-decoration-none text-dark">選iPad的理由</a>
@@ -99,13 +99,13 @@
 
     <div class="container">
         <div class="row justify-content-center mt-5">
-            <div class="col-5 ml-4" id="product-img"><img src="img/ipad.jpeg" alt="iPad" class="w-100"></div>
-            <div class="col-6 ml-5">
-                <div class="col-12">
+            <div class="col-md-5 col-12 ml-4" id="product-img"><img src="img/ipad.jpeg" alt="iPad" class="w-100"></div>
+            <div class="col-md-6 col-12 ml-5">
+                <div class="col-md-12">
                     <h3>購買 iPad</h3>
                     <p>購買 iPad 可享免額外付費運送服務。</p>
                 </div>
-                <div class="col-12 mb-4" id="color">
+                <div class="col-md-12 mb-4" id="color">
                     <p class="h5">外觀</p>
                     <div class="row text-center">
                         <div class="col-5 mx-2 ">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 mb-4" id="type">
+                <div class="col-md-12 col mb-4" id="type">
                     <span></span>
                     <p class="h5">儲存裝置</p>
                     <div class="row text-center ">
@@ -145,16 +145,16 @@
                     </div>
                 </div>
 
-                <div class="col-12 mb-4">
+                <div class="col-md-12 col mb-4">
                     <span></span>
                     <p class="h5">連線能力</p>
                     <div class="row text-center" id="changeP">
-                        <div class="col-5 mx-2">
+                        <div class="col-md-5 col-5 mx-2">
                             <button type="button" class=" btn border w-100" onclick="priceP(10900)">
                                 <p class="h5">Wi-Fi</p>
                                 <p>NT$10,900 起</p>
                             </button></div>
-                        <div class="col-5 mx-2">
+                        <div class="col-md-5 col-5 mx-2">
                             <button type="button" class=" btn border w-100" onclick="priceP(15400)">
                                 <p class="h5 align-items-center">Wi-Fi + 行動網路</p>
                                 <p>NT$15,400 起</p>
@@ -165,14 +165,14 @@
                     </div>
                 </div>
 
-                <div class="col-12 mb-4 bg-light">
+                <div class="col-md-12 mb-4 bg-light">
                     <div class="row">
-                        <div class="col-12 mb-3" id="price">
+                        <div class="col-md-12 mb-3" id="price">
                             <p class="h1">NT$ 10900起</p>
                             <p>含營業稅和其他法定稅費：約 NT$544。*</p>
                             <a href="#">最低月付 NT$908，12 個月，0% 利率</a>
                         </div>
-                        <div class="col-12 mb-3"><button type="button" class="btn btn-primary w-75 ">加入購物袋</button>
+                        <div class="col-md-12 mb-3"><button type="button" class="btn btn-primary w-75 ">加入購物袋</button>
                         </div>
                         <div class="col-5"></div>
                         <div class="col-5"></div>
@@ -221,12 +221,12 @@
         }
 
         function changePrice() {
-            changep.innerHTML = ` <div class="col-5 mx-2">
+            changep.innerHTML = ` <div class="col-md-5 col-5 mx-2">
                             <button type="button" class=" btn border w-100" onclick="priceP(13900)">
                                 <p class="h5">Wi-Fi</p>
                                 <p>NT$13,900 起</p>
                             </button></div>
-                        <div class="col-5 mx-2">
+                        <div class="col-md-5 col-5 mx-2">
                             <button type="button" class=" btn border w-100" onclick="priceP(18400)">
                                 <p class="h5 align-items-center">Wi-Fi + 行動網路</p>
                                 <p>NT$18,400 起</p>
@@ -239,12 +239,12 @@
         }
 
         function changePricetwo() {
-            changep.innerHTML = ` <div class="col-5 mx-2">
+            changep.innerHTML = ` <div class="col-md-5 col-5 mx-2">
                             <button type="button" class=" btn border w-100" onclick="priceP(10900)">
                                 <p class="h5">Wi-Fi</p>
                                 <p>NT$10,900 起</p>
                             </button></div>
-                        <div class="col-5 mx-2">
+                        <div class="col-md-5 col-5 mx-2">
                             <button type="button" class=" btn border w-100" onclick="priceP(15400)">
                                 <p class="h5 align-items-center">Wi-Fi + 行動網路</p>
                                 <p>NT$15,400 起</p>
