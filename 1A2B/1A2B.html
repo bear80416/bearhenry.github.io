@@ -86,16 +86,21 @@
             <div class="col-12 col-md-7">
                 <div class="col d-flex justify-content-between">
                     <button class="btn btn-dark" onclick="getRamdon()">遊戲開始</button>
-                    <button class="btn btn-dark">重來</button>
-                    <button class="btn btn-dark">看答案</button>
+                    <button class="btn btn-dark" onclick="reset()">重來</button>
+                    <button class="btn btn-dark" onclick="ans()"data-trigger="hover" data-toggle="popover" data-placement="bottom" data-content="需花費50步">看答案</button>
+                    <button id="over" class="btn btn-danger" data-toggle="modal"
+                        data-target="#exampleModal">剩餘步數:</button>
                 </div>
 
                 <div class="col mt-4"><label for="keyNum">輸入數字</label>
-                    <input class="form-control" type="text" name="" id="keyNum"></div>
+                    <input class="form-control" type="text" name="" id="keyNum">
+                    <button class="btn btn-info mt-3 w-100" onclick="verificationCode()">驗證</button>
+                </div>
 
 
-                <div class="col mt-5 bg-light h-100 flow-auto">
+                <div class="col mt-3 bg-light h-100 flow-auto">
                     <h1>遊戲歷程</h1>
+                    <div class="col" id="status"></div>
                     <div class="col" id="history">
 
                     </div>
@@ -104,18 +109,135 @@
         </div>
     </div>
 
+    <!-- ----------------購買視窗---------------- -->
+
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content border-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">斗內冰淇淋</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>冰淇淋</th>
+                                <th>數量</th>
+                                <th>步數</th>
+                                <th>價格(台幣)</th>
+                                <th>斗內我</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="/computer/img/ice-cream.png" alt="" width="30" height="30"></td>
+                                <td>1</td>
+                                <td>+10</td>
+                                <td>$30</td>
+                                <td><button type="button" class="btn btn-warning" onclick="buyIce(10)"
+                                        data-dismiss="modal">購買</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/computer/img/ice-cream.png" alt="" width="30" height="30">
+                                    <img src="/computer/img/ice-cream.png" alt="" width="30" height="30"></td>
+                                <td>2</td>
+                                <td>+30</td>
+                                <td>$50</td>
+                                <td><button type="button" class="btn btn-warning" onclick="buyIce(30)"
+                                        data-dismiss="modal">購買</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/computer/img/ice-cream.png" alt="" width="30" height="30">
+                                    <img src="/computer/img/ice-cream.png" alt="" width="30" height="30">
+                                    <img src="/computer/img/ice-cream.png" alt="" width="30" height="30"></td>
+                                <td>3</td>
+                                <td>+50</td>
+                                <td>$70</td>
+                                <td><button type="button" class="btn btn-warning" onclick="buyIce(50)"
+                                        data-dismiss="modal">購買</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
 
 
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">不需要</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         let history = document.getElementById('history');
+        let status = document.getElementById('status')
         var hs = '';
+        let code = '';
+        let over = document.getElementById('over');
+        let step = 10;
+
+        over.innerHTML = `剩餘步數:${step}`;
+
+        function buyIce(num) {
+            step = step + num;
+            over.innerHTML = `剩餘步數:${step}`;
+        }
 
         function getRamdon() {
+            
+            code = '1234';
+            if (code.length >= 1)
+                status.innerHTML = '已取得亂數';
+        }
 
-            hs = '尚未開放遊玩';
+        function verificationCode() {
+            if (code.length < 3) {
+                status.innerText = '還沒按開始遊戲!'
+            } else {
+                if (step <= 0) {
+                    status.innerText = '請購買冰淇淋以繼續遊戲'
+                    over.innerText = `購買冰淇淋`;
+                } else {
+                    step = step - 1;
+                    let playerKey = document.getElementById('keyNum').value;
+                    if (playerKey.length > 4 || playerKey.length < 4) {
+                        status.innerHTML = '只能輸入4個數字唷';
+                    } else {
+                        hs = hs + `您輸入的數字是${playerKey} | 提示: 1A2B<br>`;
+                        history.innerHTML = hs;
+                    }
 
-            history.innerText = hs;
+                }
+                over.innerHTML = `剩餘步數:${step}`;
+            }
+        }
 
+
+
+        function reset() {
+            hs = '';
+            code = '';
+            status.innerText = '遊戲重來'
+        }
+
+        function ans() {
+
+            if (code.length < 3) {
+                status.innerText = '還沒按開始遊戲!'
+            } else {
+                if (step < 50) {
+                    status.innerText = '步數不夠，請購買冰淇淋。'
+                } else {
+                    step = step - 50;
+                    over.innerHTML = `剩餘步數:${step}`;
+                    history.innerText = code;
+                }
+
+            }
         }
     </script>
 
