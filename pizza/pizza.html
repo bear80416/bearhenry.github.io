@@ -117,31 +117,37 @@
                 var myPara1 = document.createElement('p');
                 var myPara2 = document.createElement('p');
                 var myPara3 = document.createElement('p');
-                var myList = document.createElement('ul');
+                var myList = document.createElement('button');
                 var mydiv = document.createElement('div');
 
                 myH2.textContent = pizzas[i].pdName;
-                myPara1.textContent = '裡面有: ' + pizzas[i].stuffing;
-                myPara2.textContent = '更多: ' + pizzas[i].description;
-                myPara3.textContent = '價格';
+                myPara1.textContent = '餡料:'+pizzas[i].stuffing;
+                myPara2.textContent = pizzas[i].description;
+                myPara3.textContent = '♥♥♥♥♥';
                 mydiv.innerHTML = `<img src="./img/${pizzas[i].pdImage}" width="200" height="200" >`;
 
                 var price = pizzas[i].price;
 
-                var listItem = document.createElement('p');
-                listItem.textContent = price;
-                myList.appendChild(listItem);
+                //var listItem = document.createElement('button');
+                myList.textContent = price;
+                //myList.appendChild(listItem);
 
                 myArticle.appendChild(mydiv);
                 myArticle.appendChild(myH2);
-                myArticle.appendChild(myPara1);
-                myArticle.appendChild(myPara2);
                 myArticle.appendChild(myPara3);
                 myArticle.appendChild(myList);
+                myArticle.appendChild(myPara1);
+                myArticle.appendChild(myPara2);
+                
+                
 
                 section.appendChild(myArticle);
                 myArticle.className = ('col-md-3 col px-3 bg-light');
+                myH2.className = 'mt-2';
+                myPara3.className = 'text-danger d-flex justify-content-end';
                 mydiv.className = 'd-flex justify-content-center bg-warning';
+                myList.className = 'btn btn-dark w-100 text-center mb-2';
+                myList.type = 'button';
             }
           
         }
