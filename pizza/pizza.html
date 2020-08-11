@@ -67,89 +67,92 @@
     </nav>
     <!-- ----------------------上方導覽------------------------- -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col">
+    <header>
+    </header>
 
-            </div>
-        </div>
+    <div class="container">
+        
+            <section class="row">
+            </section>
+        
     </div>
 
-    <template>
 
 
-    </template>
     <!-- ------------------------跳出視窗---------------------------- -->
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-        詳細內容
-    </button>
+    <script>
+        var header = document.querySelector('header');
+        var section = document.querySelector('section');
+        
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-        </div>
-    </div>
+        var url = 'https://raw.githubusercontent.com/TimChen0409/FileStorage/master/Pizza.json';
+        var request = new XMLHttpRequest();
+        request.open('GET', url);
+        request.responseType = 'json';
+        request.send();
 
-
-    <script type="module">
-        import {$g} from '/pizza/data/helpers.js';
-    const url = 'https://raw.githubusercontent.com/TimChen0409/FileStorage/master/Pizza.json';
-
-    let row = $g('row');
-    let xhr = new XMLHttpRequest();
-    let msg = document.querySelectorAll('msg');
-
-    window.onload = function(){
-        requestJSON();
-    }
-
-    var pizzaObject;
-    function requestJSON(){
-        xhr.onload = function(){ 
-        pizzaObject = JSON.parse(this.responseText);
-        const  titleArray = Object.keys(pizzaObject.pizza);
-
-        for (let i = 0 ; i<titleArray.length;i++)
-        {
-            const dataArray = Object.Values(pizzaObject.pizza[i]);
-            addCard(dataArray)
+        request.onload = function () {
+            var pizzaHot = request.response;
+            /* pizzaHeader(pizzaHot); */
+            showPizza(pizzaHot);
         }
+
+        /*     function pizzaHeader(jsonObj) {
+                var myH1 = document.createElement('h1');
+                myH1.textContent = jsonObj['squadName'];
+                header.appendChild(myH1);
+
+                var myPara = document.createElement('p');
+                myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+                header.appendChild(myPara);
+            } */
+
+        function showPizza(jsonObj) {
+            var pizzas = jsonObj['pizzaProduct'];
+
+            for (i = 0; i < pizzas.length; i++) {
+                var myArticle = document.createElement('Article');
+                var myH2 = document.createElement('h3');
+                var myPara1 = document.createElement('p');
+                var myPara2 = document.createElement('p');
+                var myPara3 = document.createElement('p');
+                var myList = document.createElement('ul');
+                var mydiv = document.createElement('div');
+
+                myH2.textContent = pizzas[i].pdName;
+                myPara1.textContent = '裡面有: ' + pizzas[i].stuffing;
+                myPara2.textContent = '更多: ' + pizzas[i].description;
+                myPara3.textContent = '價格';
+                mydiv.innerHTML = `<img src="./img/${pizzas[i].pdImage}" width="200" height="200" >`;
+
+                var price = pizzas[i].price;
+
+                var listItem = document.createElement('p');
+                listItem.textContent = price;
+                myList.appendChild(listItem);
+
+                myArticle.appendChild(mydiv);
+                myArticle.appendChild(myH2);
+                myArticle.appendChild(myPara1);
+                myArticle.appendChild(myPara2);
+                myArticle.appendChild(myPara3);
+                myArticle.appendChild(myList);
+
+                section.appendChild(myArticle);
+                myArticle.className = ('col-md-3 col px-3 bg-light');
+                mydiv.className = 'd-flex justify-content-center bg-warning';
+            }
+          
         }
-         xhr.open('GET',url);
-         xhr.send();
-
-    }
-
-    function addCard(pizzaArray){
-        let card = $g('#cardPizza');
-        let cloneContent = card.content.cloneNode(true);
-
-
-
-    }
+     
+                
+    </script>
 
 
 
 
-</script>
+
 
 
     <!-- Optional JavaScript -->

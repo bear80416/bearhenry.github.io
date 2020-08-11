@@ -16,7 +16,7 @@ var $ex = function (title) {
     console.log(title);
 }
 
-
+//選取元素
 function $g(selector) {
     //判斷是否為id selector
     if (selector.includes('#') && !selector.includes(' ')) {
@@ -30,12 +30,26 @@ function $g(selector) {
     return nodelist.length == 1 ? nodelist[0] : nodelist;
 }
 
+//創建元素
 function $c(selector){
     return document.createElement(selector);
 }
+
+function $ctag(elementType, text){
+    let element = document.createElement(elementType);
+    element.innerText = text;
+
+    return element;
+}
+
 
 function $log(value){
     console.log(value);
 }
 
-export { displayName, $title, $ex, $g, $log };
+
+function $random(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+export { displayName, $title, $ex, $g, $c, $ctag ,$log, $random };

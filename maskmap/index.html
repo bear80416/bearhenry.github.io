@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
     <title>口罩地圖</title>
     <style>
         #map {
@@ -58,9 +58,8 @@
                     </div>
                 </li>
                 <li class="navbar-item dropdown active">
-                    <a class="nav-link ml-3" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" >
-                    口罩地圖<span class="sr-only">(current)</span>
+                    <a class="nav-link ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                        口罩地圖<span class="sr-only">(current)</span>
                     </a>
                     <div class="dropdown-menu border-0 rounded-0" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/computer/computer.html">計算機</a>
@@ -74,62 +73,14 @@
             </ul>
         </div>
 
-                <button class="btn" data-container="body" data-toggle="popover" data-placement="left" data-content="EAT ME!">
-                    <a class="navbar d-flex " href="#"><img src="/computer/img/ice-cream.png" width="30" height="30" class="" alt=""
-                loading="lazy"></a>
-                  </button>
+        <button class="btn" data-container="body" data-toggle="popover" data-placement="left" data-content="EAT ME!">
+            <a class="navbar d-flex " href="#"><img src="/computer/img/ice-cream.png" width="30" height="30" class=""
+                    alt="" loading="lazy"></a>
+        </button>
     </nav>
     <!-- ----------------------上方導覽------------------------- -->
 
-    <div class="row justify-content-end">
-        <div class="col-4 bg-dark text-light rounded-top mt-4 overflow-auto">
-            <div class="col-12 text-center mt-3">
-                <h1>口罩出沒地點</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary">成人</button>
-                    <button type="button" class="btn btn-secondary">兒童</button>
-                    <button type="button" class="btn btn-secondary">全部</button>
-                </div>
-            </div>
-            <div class="col-12 mt-4">
-                <h3>地點</h3>
-                <div class="row mt-2 justify-content-center">
-                    <div id="cities">
-                     
-                    </div>
-                    <div id="area">
-                       
-                    </div>
-                </div>
-                <div class="col mt-3" >
-
-                    <div class="col card mb-2" id="store-list">
-                        <template class="card-body" id="cardTemplate">
-                            <h5 class="card-title text-dark" id="shopName"></h5>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <h6 class="card-subtitle mb-2 text-muted">口罩剩餘數目：</h6>
-                            <p class="card-text text-dark" id="adult">
-                            </p>
-                            <p class="card-text text-dark" id="child">
-                            </p>
-                            <a href="#" class="card-link" id="phone"></a>
-                            <p class="card-text text-dark" id="note"></p>
-                        </template>
-                    </div>
-
-
-                </div>
-
-
-
-            </div>
-        </div>
-    </div>
-
-    </div>
+  
 
 
 
@@ -170,46 +121,47 @@
                         }]
                     }],
                 });
-            var image = "../computer/img/ice-cream.png";
-            map.data.loadGeoJson(
-                "https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json", null,
-                function (features) {
-                    features.map(function (feature) {
-                        var marker = new google.maps.Marker({
-                            position: feature.getGeometry().get(),
-                            icon: null,
-                            map: map,
-                        });
-                        markers.push(marker);
-                        let infowindow = new google.maps.InfoWindow({
-                            content: `<h6>${feature.getProperty('name')}</h6>`,
-                            maxWidth: 450,
-                            
-                        });
-                        marker.addListener("click", () => {
-                            infowindow.open(map, marker)
-                            
-                        });
+             var image = "../computer/img/ice-cream.png";
+             map.data.loadGeoJson(
+                 "https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json", null,
+                 function (features) {
+                     features.map(function (feature) {
+                         var marker = new google.maps.Marker({
+                             position: feature.getGeometry().get(),
+                             icon: image,
+                             zindex:-1,
+                             map: map,
+                         });
+                         markers.push(marker);
+                         let infowindow = new google.maps.InfoWindow({
+                             content: `<h6>${feature.getProperty('name')}</h6>`,
+                             maxWidth: 450,
+                             
+                         });
+                         marker.addListener("click", () => {
+                             infowindow.open(map, marker)
+                             
+                         });
 
-                    });
-                    const clusterOptions = {
-                        imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-                        gridSize: 130, 
-                        zoomOnClick: true, 
-                        maxZoom: 15, 
-                    };
-                    var markerCluster = new MarkerClusterer(map, markers, clusterOptions);
-                    map.data.setMap(null);
+                     });
+                     /* const clusterOptions = {
+                         imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+                         gridSize: 130, 
+                         zoomOnClick: true, 
+                         maxZoom: 15, 
+                     }; */
+                     var markerCluster = new MarkerClusterer(map, markers, clusterOptions);
+                     map.data.setMap(null);
 
-                
-                })
+                 
+                 })
 
-            /* map.data.setStyle({
+            map.data.setStyle({
                 icon: image,
-            }); */
+            });
 
             getUserLocation(map);
-            getMaskData(map, 'https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json');
+            //getMaskData(map, 'https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json');
             getCityData('./CityCountyData.json');
         }
 
@@ -237,7 +189,7 @@
                     };
                     var marker = new google.maps.Marker({
                         position: myLatLng,
-                        icon: '../computer/img/market.png',
+                        icon: '../maskmap/img/market.png',
                         map: map
                     });
                     map.setCenter(myLatLng);
@@ -312,13 +264,13 @@
                     geoData.forEach((item, index) => {
                         countriesOptions += `<div id="" value="${item.CityName}" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             ${item.CityName}</div>`;
-                        
+
                     });
                     cities.innerHTML = `<div class="dropdown mr-3">
                             ${countriesOptions}
                     </div>`;
-                        
-                   
+
+
                     cities.addEventListener('change', function () {
                         cytiesOptions = '';
                         cytiesOptions = `<button class="btn btn-secondary dropdown-toggle" type="button"
@@ -329,13 +281,13 @@
                             cytiesOptions +=
                                 `<div id="" value="${item.AreaName}}" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     ${item.AreaName}</div>`;
-                                
+
                         })
                         area.innerHTML = `<div class="dropdown">
                             ${cytiesOptions}
                     </div>`;
-                        
-                        
+
+
                     })
                 } else {
                     console.log('Error');
@@ -344,8 +296,6 @@
             xhr.open('GET', url);
             xhr.send();
         }
-        
-        
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -358,7 +308,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
-       <script>
+    <script>
         $(function () {
             $('[data-toggle="popover"]').popover()
         })
