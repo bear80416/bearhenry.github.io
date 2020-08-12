@@ -82,13 +82,13 @@
                     <div class="col mt-5 bg-warning">
                         <h4>- 未有行程唷 -</h4>
                     </div>
-                   
+
                     <div class="col mt-5">
                         <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#staticBackdrop">
                             新增待辦事項
                         </button>
                     </div>
-                  
+
 
                 </div>
             </div>
@@ -135,19 +135,18 @@
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content bg-light">
                 <div class="modal-header">
-
                     <h5 class="modal-title" id="staticBackdropLabel">新增待辦事項</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <label id="datenow">日期：</label>
-                    <input type="date" class="form-control" placeholder="20200805" id="adddate">
+                    <label> <span class="text-danger">*</span>選擇日期：
+                    </label>
+                    <input type="date" class="form-control" id="adddate">
 
-                    <label for="addtitle">標題：</label>
+                    <label for="addtitle"><span class="text-danger">*</span>標題：</label>
                     <br>
                     <input type="text" class="form-control" id="addtitle" placeholder="要去哪裡玩呢？">
                     <label for="addnote">內容備註：</label>
@@ -159,34 +158,14 @@
                 </div>
                 <div class="modal-footer">
 
-                    <button type="button" class="btn" onclick="addskc()" data-dismiss="modal">確定新增</button>
+                    <button type="button" class="btn " onclick="addskc()" data-dismiss="modal">確定新增</button>
                     <button type="button" class="btn" data-dismiss="modal">取消</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 刪除行程鈕 -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">取消行程</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    確定取消行程嗎?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">再想想</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"
-                        onclick="removeSkc(dates.skc)">確定</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- -----------------------原始碼---------------------- -->
     <script>
@@ -196,8 +175,8 @@
         var day = date.getDate();
         var holder = document.getElementById('days');
         var yeartitle = document.getElementById('ytitle');
-        datenow.innerHTML = '日期:' + my_year + '年' + (my_month + 1) + '月' + day + '日';
-        //console.log(`${my_year}${(my_month + 1)}`);
+        var cancel = document.getElementById('cancel')
+        console.log(`${my_year}${(my_month + 1)}`);
 
         function dateStart(year, month) {
             let start = new Date(year, month, 1);
@@ -226,7 +205,6 @@
 
                 let skc = JSON.parse(localStorage.getItem(`${dateW}`));
                 if (skc == null) {
-
 
                     blank += `<td><button type="button" class="btn p-2 rounded-pill" onclick="skcCard(${dateW}) ">
                 ${i}
@@ -281,16 +259,18 @@
                 dt: adddate,
                 Title: titledata,
                 Note: notedata,
-                Location: '台北市淡水區山上一處',
+                //Location: '台北市淡水區山上一處',
             }
 
-            localStorage.setItem(moment(adddate).format('YYYYMD'), JSON.stringify(skc));    
+            localStorage.setItem(moment(adddate).format('YYYYMD'), JSON.stringify(skc));
             dates()
         }
 
         function removeSkc(num) {
+
             localStorage.removeItem(num);
-            dates()
+            dates();
+            skcCard();
         }
 
         function skcCard(num) {
@@ -324,7 +304,7 @@
                             <p class="card-text" id="card-text"></p>
                             <a href="#" class="btn btn-light">提醒我</a>
                             <a href="#" class="btn btn-light">導航去</a>
-                            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" class="btn" onclick="removeSkc(${num})" >
                             取消行程
                             </button>
                         </div>
@@ -336,9 +316,9 @@
                     </div>`;
                 document.getElementById('card-title').innerText = skc.Title;
                 document.getElementById('card-text').innerText = skc.Note;
+
+
             }
-
-
 
         }
     </script>
