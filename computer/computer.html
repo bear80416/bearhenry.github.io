@@ -42,8 +42,7 @@
                     </div>
                 </li>
                 <li class="navbar-item dropdown active">
-                    <a class="nav-link ml-3" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" >
+                    <a class="nav-link ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
                         計算機<span class="sr-only">(current)</span>
                     </a>
                     <div class="dropdown-menu border-0 rounded-0" aria-labelledby="navbarDropdown">
@@ -53,15 +52,17 @@
                         <a class="dropdown-item" href="/maskmap/index.html">口罩地圖</a>
                         <a class="dropdown-item" href="/pizza/pizza.html">Pizza</a>
                         <a class="dropdown-item" href="/1A2B/1A2B.html">1A2B</a>
+                        <a class="dropdown-item" href="/puzzle/index.html">拼圖</a>
+                        <a class="dropdown-item" href="/statistics/index.html">統計</a>
                     </div>
                 </li>
             </ul>
         </div>
 
-                <button class="btn" data-container="body" data-toggle="popover" data-placement="left" data-content="EAT ME!">
-                    <a class="navbar d-flex " href="#"><img src="/computer/img/ice-cream.png" width="30" height="30" class="" alt=""
-                loading="lazy"></a>
-                  </button>
+        <button class="btn" data-container="body" data-toggle="popover" data-placement="left" data-content="EAT ME!">
+            <a class="navbar d-flex " href="#"><img src="/computer/img/ice-cream.png" width="30" height="30" class=""
+                    alt="" loading="lazy"></a>
+        </button>
     </nav>
     <!-- ----------------------上方導覽------------------------- -->
     <div class="container">
@@ -101,7 +102,7 @@
                                     <img src="/computer/img/ice-cream.png" alt="" width="20" height="20">
                                 </button>
                                 <button class="btn btn-dark col" onclick="zero(this.innerText)" id="zero">0</button>
-                                <button class="btn btn-dark col" onclick="clickSum(this.innerText)"
+                                <button class="btn btn-dark col" onclick="point(this.innerText)"
                                     id="point">.</button></div>
                         </div>
                         <div class="col-3 p-0 btn-group-vertical">
@@ -129,15 +130,25 @@
             ans.innerText = sum;
         }
 
-        function zero(num){
-              if (sum.length > 0 && num == 0) {
+        function zero(num) {
+            if (sum.length > 0 && num == 0) {
                 sum = sum + num;
+                ans.innerText = sum;
+            } else {
+                ans.innerText = '0';
             }
-            ans.innerText = sum;
+
+        }
+
+        function point(i) {
+
+                sum = sum + i;
+                ans.innerText = sum;
+           
         }
 
         function getAns(i) {
-            
+
             sum = eval(sum);
 
             ans.innerText = sum;
