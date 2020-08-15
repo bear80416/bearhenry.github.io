@@ -14,11 +14,16 @@
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
+            background-image: url('https://picsum.photos/1500/700/?random=1');
+        }
+
+        .main {
+            
         }
     </style>
 </head>
 
-<body class="bg-light">
+<body class="">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -43,9 +48,11 @@
                 </li>
                 <li class="navbar-item dropdown active">
                     <a class="nav-link ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        計算機<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-filter-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                          </svg>
+                        計算機<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-filter-left"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                        </svg>
                     </a>
                     <div class="dropdown-menu border-0 rounded-0" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/computer/computer.html">計算機</a>
@@ -68,44 +75,44 @@
     </nav>
     <!-- ----------------------上方導覽------------------------- -->
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 col">
+        <div class="row">
+            <div class="col-md-6 col-12 main mb-3">
                 <div
-                    class="col-12 text-white h-50 mt-auto d-flex align-items-end flex-column bd-highlight bg-dark rounded">
-                    <h1 class="mt-auto p-2 bd-highdark" id="answer">請輸入數字</h1>
+                    class="col-md col-12 text-white mt-auto d-flex align-items-end flex-column bd-highlight bg-dark rounded">
+                    <h1 class="mt-5 p-2 bd-highdark" id="answer">請輸入數字</h1>
                 </div>
-                <div class="col-12 mt-3">
+                <div class="col-md col-12 mt-3">
                     <div class="row">
                         <button class="col btn btn-dark h1" onclick="reset()">AC</button>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-md col-12">
                     <div class="row mt-3 align-items-center bg-dark rounded">
-                        <div class="col-9 btn-group-vertical h-100 p-0 ">
-                            <div class="btn-group col-12">
+                        <div class="col-md col-9 btn-group-vertical h-100 p-0 ">
+                            <div class="btn-group col-12 col-md ">
                                 <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="one">1</button>
                                 <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="two">2</button>
                                 <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="three">3</button>
                             </div>
-                            <div class="btn-group col-12">
+                            <div class="btn-group col-md col-12">
                                 <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="four">4</button>
                                 <button class="btn btn-warning" onclick="clickSum(this.innerText)" id="five">5</button>
                                 <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="six">6</button>
                             </div>
-                            <div class="btn-group col-12"><button class="btn btn-dark col"
+                            <div class="btn-group col-md col-12"><button class="btn btn-dark col"
                                     onclick="clickSum(this.innerText)" id="seven">7</button>
-                                <button class="btn btn-dark col" onclick="clickSum(this.innerText)"
+                                <button class="btn btn-dark col col-md " onclick="clickSum(this.innerText)"
                                     id="eight">8</button>
-                                <button class="btn btn-dark col" onclick="clickSum(this.innerText)" id="nine">9</button>
+                                <button class="btn btn-dark col col-md " onclick="clickSum(this.innerText)" id="nine">9</button>
                             </div>
-                            <div class="btn-group col-12">
-                                <button type="button" class="btn btn-dark col" data-container="body"
+                            <div class="btn-group col-12 col-md">
+                                <button type="button" class="btn btn-dark col col-md " data-container="body"
                                     data-toggle="popover" data-placement="left" data-content="冰淇淋好好吃喔~~">
                                     <img src="/computer/img/ice-cream.png" alt="" width="20" height="20">
                                 </button>
-                                <button class="btn btn-dark col" onclick="zero(this.innerText)" id="zero">0</button>
-                                <button class="btn btn-dark col" onclick="point(this.innerText)"
-                                    id="point">.</button></div>
+                                <button class="btn btn-dark col col-md " onclick="zero(this.innerText)" id="zero">0</button>
+                                <button class="btn btn-dark col col-md " onclick="point(this.innerText)" id="point">.</button>
+                            </div>
                         </div>
                         <div class="col-3 p-0 btn-group-vertical">
                             <button class="col btn btn-dark " onclick="clickSum(this.innerText)" id="plus">+</button>
@@ -117,6 +124,9 @@
                     </div>
                 </div>
             </div>
+           <!--  <div class="col-md-6 col-12"> 
+                <img src="https://picsum.photos/2000/1384/?random=1" class="rounded w-100">
+            </div> -->
         </div>
 
     </div>
@@ -125,7 +135,7 @@
     <div class="bg-light text-dark">
         <div class="row mt-4 mx-auto">
             <div class="col-md-3 mt-4">
-                <h5 class=""><img class="mr-2" src="./img/ice-cream/png/006-ice cream.png" alt="" width="20">JAVASCRIPT
+                <h5 class=""><img class="mr-2" src="/img/ice-cream/png/006-ice cream.png" alt="" width="20">JAVASCRIPT
                 </h5>
                 <a class="text-decoration-none text-dark d-block ml-4"
                     href="https://bearhenry.azurewebsites.net/Apple/apple.html">APPLE</a>
@@ -150,7 +160,7 @@
 
             </div>
             <div class="col-md-3 mt-4">
-                <h5 class=""><img class="mr-2" src="./img/ice-cream/png/029-ice cream truck.png" alt="" width="20">切版
+                <h5 class=""><img class="mr-2" src="/img/ice-cream/png/029-ice cream truck.png" alt="" width="20">切版
                 </h5>
                 <a class="text-decoration-none text-dark d-block ml-4"
                     href="https://bearhenry.azurewebsites.net/cat/home.html">小貓網站</a>
@@ -166,20 +176,20 @@
             </div>
             <div class="col-md-3 mt-4 ">
                 <div class="col">
-                    <h5><img class="mr-2" src="./img/ice-cream/png/046-packaging.png" alt="" width="20">聯絡資訊</h5>
+                    <h5><img class="mr-2" src="/img/ice-cream/png/046-packaging.png" alt="" width="20">聯絡資訊</h5>
                     <div class="col col-md mt-3">
-                        <a href="#" class="mr-3"><img src="./img/social-media/png/036-facebook.png" alt=""
+                        <a href="#" class="mr-3"><img src="/img/social-media/png/036-facebook.png" alt=""
                                 width="30"></a>
-                        <a href="#" class="mr-3"><img src="./img/social-media/png/001-youtube.png" alt=""
+                        <a href="#" class="mr-3"><img src="/img/social-media/png/001-youtube.png" alt=""
                                 width="30"></a>
-                        <a href="#" class="mr-3"><img src="./img/social-media/png/029-instagram.png" alt=""
+                        <a href="#" class="mr-3"><img src="/img/social-media/png/029-instagram.png" alt=""
                                 width="30"></a>
-                        <a href="#" class="mr-3"><img src="./img/social-media/png/005-whatsapp.png" alt=""
+                        <a href="#" class="mr-3"><img src="/img/social-media/png/005-whatsapp.png" alt=""
                                 width="30"></a>
                     </div>
                 </div>
                 <div class="col mt-4">
-                    <h5><img class="mr-2" src="./img/ice-cream/png/005-popsicle.png" alt="" width="20">合作請洽</h5>
+                    <h5><img class="mr-2" src="/img/ice-cream/png/005-popsicle.png" alt="" width="20">合作請洽</h5>
                     <p></p><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-inboxes-fill"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -214,63 +224,63 @@
 
         <!-- -----------------------------JS----------------------------- -->
 
-    <script>
-        let ans = document.getElementById('answer');
-        let sum = '';
+        <script>
+            let ans = document.getElementById('answer');
+            let sum = '';
 
 
-        function clickSum(num) {
-            sum = sum + num;
-            ans.innerText = sum;
-        }
-
-        function zero(num) {
-            if (sum.length > 0 && num == 0) {
+            function clickSum(num) {
                 sum = sum + num;
                 ans.innerText = sum;
-            } else {
-                ans.innerText = '0';
             }
 
-        }
+            function zero(num) {
+                if (sum.length > 0 && num == 0) {
+                    sum = sum + num;
+                    ans.innerText = sum;
+                } else {
+                    ans.innerText = '0';
+                }
 
-        function point(i) {
+            }
+
+            function point(i) {
 
                 sum = sum + i;
                 ans.innerText = sum;
-           
-        }
 
-        function getAns(i) {
+            }
 
-            sum = eval(sum);
+            function getAns(i) {
 
-            ans.innerText = sum;
+                sum = eval(sum);
+
+                ans.innerText = sum;
 
 
-        }
+            }
 
-        function reset() {
-            sum = '';
-            ans.innerText = '0'
-        }
-    </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="popover"]').popover()
-        })
-    </script>
+            function reset() {
+                sum = '';
+                ans.innerText = '0'
+            }
+        </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+        </script>
+        <script>
+            $(function () {
+                $('[data-toggle="popover"]').popover()
+            })
+        </script>
 </body>
 
 </html>
