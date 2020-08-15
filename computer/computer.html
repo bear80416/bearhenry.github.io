@@ -17,7 +17,13 @@
             background-image: url('https://picsum.photos/1500/700/?random=1');
         }
 
-        .main {}
+        .main .bg-dark{
+            background-color: #343a4062 !important;
+        }
+        .main .btn-dark{
+            background-color: #343a4057;
+            border-color: #343a4000;
+        }
     </style>
 </head>
 
@@ -72,7 +78,7 @@
         </button>
     </nav>
     <!-- ----------------------上方導覽------------------------- -->
-    <div class="container">
+    <div class="container main">
         <div class="row">
             <div class="col-md-6 col-12 main mb-3">
                 <div
@@ -94,7 +100,7 @@
                             </div>
                             <div class="btn-group col-md col-12">
                                 <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="four">4</button>
-                                <button class="btn btn-warning" onclick="clickSum(this.innerText)" id="five">5</button>
+                                <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="five">5</button>
                                 <button class="btn btn-dark" onclick="clickSum(this.innerText)" id="six">6</button>
                             </div>
                             <div class="btn-group col-md col-12"><button class="btn btn-dark col"
@@ -106,7 +112,7 @@
                             </div>
                             <div class="btn-group col-12 col-md">
                                 <button type="button" class="btn btn-dark col col-md " data-container="body"
-                                    data-toggle="popover" data-placement="left" data-content="冰淇淋好好吃喔~~">
+                                    data-toggle="popover" data-placement="bottom" data-content="冰淇淋好好吃喔~~">
                                     <img src="/computer/img/ice-cream.png" alt="" width="20" height="20">
                                 </button>
                                 <button class="btn btn-dark col col-md " onclick="zero(this.innerText)"
@@ -120,7 +126,7 @@
                             <button class="col btn btn-dark" onclick="clickSum(this.innerText)" id="less">-</button>
                             <button class="col btn btn-dark" onclick="clickSum(this.innerText)" id="plus">*</button>
                             <button class="col btn btn-dark" onclick="clickSum(this.innerText)" id="less">/</button>
-                            <button class="col btn btn-warning" onclick="getAns()">=</button>
+                            <button class="col btn btn-info" onclick="getAns()">=</button>
                         </div>
                     </div>
                 </div>
