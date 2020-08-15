@@ -17,6 +17,10 @@
             font-family: 'Noto Sans TC', sans-serif;
             ;
         }
+
+        #imgChange {
+            height: 500px;
+        }
     </style>
 </head>
 
@@ -45,9 +49,11 @@
                 </li>
                 <li class="navbar-item dropdown active">
                     <a class="nav-link ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        拼圖 | Puzzle <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-filter-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-                          </svg>
+                        拼圖 | Puzzle <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-filter-left"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                        </svg>
                     </a>
                     <div class="dropdown-menu border-0 rounded-0" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/computer/computer.html">計算機</a>
@@ -80,116 +86,175 @@
                     <label class="custom-file-label" for="customFile">選擇您的圖片</label>
                 </div>
                 <div class="col ">
-                    <button class="btn btn-warning w-100 mb-5 mt-5"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                      </svg></button>
-                    <button class="btn btn-warning w-100"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-clockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z"/>
-                        <path fill-rule="evenodd" d="M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z"/>
-                      </svg></button>
+                    <button class="btn btn-warning w-100 mb-5 mt-5"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                            class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                        </svg></button>
+                    <button class="btn btn-warning w-100"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                            class="bi bi-arrow-clockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z" />
+                            <path fill-rule="evenodd"
+                                d="M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z" />
+                        </svg></button>
                 </div>
 
             </div>
-            <div class="col-9 bg-warning d-flex align-items-center justify-content-center">
+            <div id="imgChange" class="col-9 bg-warning d-flex align-items-center justify-content-center">
+                <div class="col" id="puzzle-area">
+                    <canvas width="180" height="135" class="white"></canvas>
+                    <canvas width="180" height="135" class="moveable"></canvas>
+                    <canvas width="180" height="135" class="moveable"></canvas>
+                    <canvas width="180" height="135" class="moveable"></canvas>
+                    <canvas width="180" height="135" class="moveable"></canvas>
+                    <canvas width="180" height="135" class="moveable"></canvas>
+                    <canvas width="180" height="135" class="moveable"></canvas>
+                    <canvas width="180" height="135" class="moveable"></canvas>
+                    <canvas width="180" height="135" class="moveable"></canvas>
 
-                <img src="https://picsum.photos/400/400/?random=1">
+                </div>
+
             </div>
         </div>
     </div>
 
-   <!-- ------------------------底部--------------------------- -->
+    <!-- ------------------------底部--------------------------- -->
 
-   <div class="bg-light text-dark">
-    <div class="row mt-4 mx-auto">
-        <div class="col-md-3 mt-4 mb-4">
-            <h5 class=""><img class="mr-2" src="/img/ice-cream/png/006-ice cream.png" alt="" width="20">JAVASCRIPT
-            </h5>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/Apple/apple.html">APPLE</a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/1A2B/1A2B.html">1A2B</a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/computer/computer.html">計算機</a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/pizza/pizza.html">Pizza<span
-                    class="badge badge-warning badge-pill">NEW</span></a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/maskmap/index.html">口罩地圖</a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/statistics/index.html">統計圖表<span
-                    class="badge badge-warning badge-pill">NEW</span></a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/cal/cal.html">行事曆<span
-                    class="badge badge-warning badge-pill">NEW</span></a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/puzzle/index.html">拼圖<span
-                    class="badge badge-warning badge-pill">NEW</span></a>
+    <div class="bg-light text-dark">
+        <div class="row mt-4 mx-auto">
+            <div class="col-md-3 mt-4 mb-4">
+                <h5 class=""><img class="mr-2" src="/img/ice-cream/png/006-ice cream.png" alt="" width="20">JAVASCRIPT
+                </h5>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/Apple/apple.html">APPLE</a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/1A2B/1A2B.html">1A2B</a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/computer/computer.html">計算機</a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/pizza/pizza.html">Pizza<span
+                        class="badge badge-warning badge-pill">NEW</span></a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/maskmap/index.html">口罩地圖</a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/statistics/index.html">統計圖表<span
+                        class="badge badge-warning badge-pill">NEW</span></a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/cal/cal.html">行事曆<span
+                        class="badge badge-warning badge-pill">NEW</span></a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/puzzle/index.html">拼圖<span
+                        class="badge badge-warning badge-pill">NEW</span></a>
 
-        </div>
-        <div class="col-md-3 mt-4 mb-4">
-            <h5 class=""><img class="mr-2" src="/img/ice-cream/png/029-ice cream truck.png" alt="" width="20">切版
-            </h5>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/cat/home.html">小貓網站</a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/veg/vegetable.html">蔬菜網站</a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/car/cars.html">汽車網站</a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/bs/bs.html">Build School</a>
-            <a class="text-decoration-none text-dark d-block ml-4"
-                href="https://bearhenry.azurewebsites.net/taken/kr.html">釣具網站</a>
+            </div>
+            <div class="col-md-3 mt-4 mb-4">
+                <h5 class=""><img class="mr-2" src="/img/ice-cream/png/029-ice cream truck.png" alt="" width="20">切版
+                </h5>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/cat/home.html">小貓網站</a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/veg/vegetable.html">蔬菜網站</a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/car/cars.html">汽車網站</a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/bs/bs.html">Build School</a>
+                <a class="text-decoration-none text-dark d-block ml-4"
+                    href="https://bearhenry.azurewebsites.net/taken/kr.html">釣具網站</a>
 
-        </div>
-        <div class="col-md-3 mt-4 mb-4">
-            <div class="col">
-                <h5><img class="mr-2" src="/img/ice-cream/png/046-packaging.png" alt="" width="20">聯絡資訊</h5>
-                <div class="col col-md mt-3">
-                    <a href="#" class="mr-3"><img src="/img/social-media/png/036-facebook.png" alt=""
-                            width="30"></a>
-                    <a href="#" class="mr-3"><img src="/img/social-media/png/001-youtube.png" alt="" width="30"></a>
-                    <a href="#" class="mr-3"><img src="/img/social-media/png/029-instagram.png" alt=""
-                            width="30"></a>
-                    <a href="#" class="mr-3"><img src="/img/social-media/png/005-whatsapp.png" alt=""
-                            width="30"></a>
+            </div>
+            <div class="col-md-3 mt-4 mb-4">
+                <div class="col">
+                    <h5><img class="mr-2" src="/img/ice-cream/png/046-packaging.png" alt="" width="20">聯絡資訊</h5>
+                    <div class="col col-md mt-3">
+                        <a href="#" class="mr-3"><img src="/img/social-media/png/036-facebook.png" alt=""
+                                width="30"></a>
+                        <a href="#" class="mr-3"><img src="/img/social-media/png/001-youtube.png" alt="" width="30"></a>
+                        <a href="#" class="mr-3"><img src="/img/social-media/png/029-instagram.png" alt=""
+                                width="30"></a>
+                        <a href="#" class="mr-3"><img src="/img/social-media/png/005-whatsapp.png" alt=""
+                                width="30"></a>
+                    </div>
                 </div>
-            </div>
-            <div class="col mt-4">
-                <h5><img class="mr-2" src="/img/ice-cream/png/005-popsicle.png" alt="" width="20">合作請洽</h5>
-                <p></p><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-inboxes-fill"
-                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M.125 11.17A.5.5 0 0 1 .5 11H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0 .5.5 0 0 1 .5-.5h5.5a.5.5 0 0 1 .496.562l-.39 3.124A1.5 1.5 0 0 1 14.117 16H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .121-.393zM3.81.563A1.5 1.5 0 0 1 4.98 0h6.04a1.5 1.5 0 0 1 1.17.563l3.7 4.625a.5.5 0 0 1-.78.624l-3.7-4.624A.5.5 0 0 0 11.02 1H4.98a.5.5 0 0 0-.39.188L.89 5.812a.5.5 0 1 1-.78-.624L3.81.563z" />
-                    <path fill-rule="evenodd"
-                        d="M.125 5.17A.5.5 0 0 1 .5 5H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0A.5.5 0 0 1 10 5h5.5a.5.5 0 0 1 .496.562l-.39 3.124A1.5 1.5 0 0 1 14.117 10H1.883A1.5 1.5 0 0 1 .394 8.686l-.39-3.124a.5.5 0 0 1 .121-.393z" />
-                </svg>
-                bear80416@gmail.com</p>
+                <div class="col mt-4">
+                    <h5><img class="mr-2" src="/img/ice-cream/png/005-popsicle.png" alt="" width="20">合作請洽</h5>
+                    <p></p><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-inboxes-fill"
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M.125 11.17A.5.5 0 0 1 .5 11H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0 .5.5 0 0 1 .5-.5h5.5a.5.5 0 0 1 .496.562l-.39 3.124A1.5 1.5 0 0 1 14.117 16H1.883a1.5 1.5 0 0 1-1.489-1.314l-.39-3.124a.5.5 0 0 1 .121-.393zM3.81.563A1.5 1.5 0 0 1 4.98 0h6.04a1.5 1.5 0 0 1 1.17.563l3.7 4.625a.5.5 0 0 1-.78.624l-3.7-4.624A.5.5 0 0 0 11.02 1H4.98a.5.5 0 0 0-.39.188L.89 5.812a.5.5 0 1 1-.78-.624L3.81.563z" />
+                        <path fill-rule="evenodd"
+                            d="M.125 5.17A.5.5 0 0 1 .5 5H6a.5.5 0 0 1 .5.5 1.5 1.5 0 0 0 3 0A.5.5 0 0 1 10 5h5.5a.5.5 0 0 1 .496.562l-.39 3.124A1.5 1.5 0 0 1 14.117 10H1.883A1.5 1.5 0 0 1 .394 8.686l-.39-3.124a.5.5 0 0 1 .121-.393z" />
+                    </svg>
+                    bear80416@gmail.com</p>
+
+                </div>
+
+
 
             </div>
+            <div class="col-md-3 mt-4 mb-4">
+                <h5 class=""><img class="mr-2" src="/img/ice-cream/png/042-flavour.png" alt="" width="20">學習歷程</h5>
+                <ol class="list-group ml-4">
+                    <li>ASP.NET</li>
+                    <li>Bootstrap</li>
+                    <li>C#</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                    <li>Github</li>
+                </ol>
 
-
-
-        </div>
-        <div class="col-md-3 mt-4 mb-4">
-            <h5 class=""><img class="mr-2" src="/img/ice-cream/png/042-flavour.png" alt="" width="20">學習歷程</h5>
-            <ol class="list-group ml-4">
-                <li>ASP.NET</li>
-                <li>Bootstrap</li>
-                <li>C#</li>
-                <li>JavaScript</li>
-                <li>SQL</li>
-                <li>Github</li>
-            </ol>
-
+            </div>
         </div>
     </div>
-</div>
-<div class="col-md-12 col-12 d-flex justify-content-center align-items-center bg-dark text-white ">
-    <p class="mt-3">Copyright © 2020 BEAR'S ICE-CREAM 保留一切權利。</p>
-</div>
+    <div class="col-md-12 col-12 d-flex justify-content-center align-items-center bg-dark text-white ">
+        <p class="mt-3">Copyright © 2020 BEAR'S ICE-CREAM 保留一切權利。</p>
+    </div>
 
-<!-- -----------------------------JS----------------------------- -->
+    <!-- -----------------------------JS----------------------------- -->
+    <script>
+        var puzzleImg = new Image();
+        puzzleImg.src = '/puzzle/img/monalisa.jpg';
+        var whiteImg = new Image();
+        whiteImg.src = '/puzzle/img/white.jpg';
 
+        var puzzleItems = document.querySelectorAll('#puzzle-area canvas');
+
+        var puzzleArea = document.getElementById("puzzle-area");
+
+        let imgBase = 3;
+        puzzleImg.onload = function () {
+            let pWidth = puzzleImg.width / imgBase;
+            let pHeight = puzzleImg.height / imgBase;
+
+            for (let i = 0; i < imgBase; i++) {
+                for (let j = 0; j < imgBase; j++) {
+                    let canvas = document.createElement('canvas');
+                    canvas.width = puzzleImg.width / imgBase;
+                    canvas.height = puzzleImg.height / imgBase;
+                    canvasContent = canvas.getContext('2d')
+                    if (i == 0 && j == 0){
+                        canvasContent.drawImg(whiteImg,j*pWidth,i*pHeight,pWidth,pHeight,0,0,pWidth,pHeight);
+                        canvas.setAttribute('class','white')
+                    }else{
+                        canvasContent.drawImg(puzzleImg,j*pWidth,i*pHeight,pWidth,pHeight,0,0,pWidth,pHeight);
+                        canvas.setAttribute('class','moveable')
+                    }
+                    puzzleArea.appendChild(canvas);
+                }
+            }
+        }
+
+        window.onload = function(){
+            var canvasBlocks = document.getElementsByTagName('.moveable');
+
+            for(let block of canvasBlocks)
+            {
+                block.addEventListener('click',function(){
+
+                })
+            }
+        }
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
