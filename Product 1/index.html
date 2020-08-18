@@ -22,11 +22,26 @@
 
 <body class="">
     <!-- ----------------------NavBar--------------------------- -->
-    <header class="container-fluid fixed-top">
 
-        <div class="row justify-content-between">
-            <div class="col-md-3 col mt-4 ml-4"><img src="./assets/asset 66.svg" alt=""></div>
-            <div class="col-md-3 col text-center">
+    <!--     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="row justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="col-md-3 col ml-4" id="disImg"><img src="./assets/asset 66.svg" alt=""></div>
+            <div class="col-md-3 col text-center navbar-brand"id="disImg">
                 <div class="text-item">
                     <h1>FLORIS</h1>
                 </div>
@@ -38,28 +53,29 @@
                 </div>
 
             </div>
-            <div class="col-md-3 col mt-4 mr-4">
+            <div class="col-md-3 col  mr-4">
                 <div class="row justify-content-end">
-                    <img class="mr-4" src="./assets/asset 71.svg" alt="" width="17">
-                    <img class="mr-4" src="./assets/asset 72.svg" alt="" width="17">
+                    <img class="mr-4" id="disImg" src="./assets/asset 71.svg" alt="" width="17">
+                    <img class="mr-4" id="disImg" src="./assets/asset 72.svg" alt="" width="17">
                     <img class="mr-4" src="./assets/asset 73.svg" alt="" width="17">
                 </div>
             </div>
-        </div>
-        <div class="col-md-12">
-            <nav class="nav justify-content-center">
-                <a class="nav-link active" href="#">FRAGRANCE</a>
-                <a class="nav-link" href="#">BESPOKE</a>
-                <a class="nav-link" href="#">BATH AND BODY</a>
-                <a class="nav-link" href="#">GROOMING</a>
-                <a class="nav-link" href="#">HOME</a>
-                <a class="nav-link" href="#">GIFT GUIDE</a>
-                <a class="nav-link" href="#">SAMPLES</a>
-                <a class="nav-link" href="#">WORLD OF FLORIS</a>
-            </nav>
-        </div>
 
-    </header>
+            <div class="col-md-12">
+                <ul class="navbar-nav mx-auto justify-content-center">
+                    <li class="nav-item mr-5"><a class="nav-link active" href="#">FRAGRANCE</a></li>
+                    <li class="nav-item mr-5"> <a class="nav-link" href="#">BESPOKE</a></li>
+                    <li class="nav-item mr-5"> <a class="nav-link" href="#">BATH AND BODY</a></li>
+                    <li class="nav-item mr-5"> <a class="nav-link" href="#">GROOMING</a></li>
+                    <li class="nav-item mr-5"> <a class="nav-link" href="#">HOME</a></li>
+                    <li class="nav-item mr-5"> <a class="nav-link" href="#">GIFT GUIDE</a></li>
+                    <li class="nav-item mr-5"> <a class="nav-link" href="#">SAMPLES</a></li>
+                    <li class="nav-item mr-5"> <a class="nav-link" href="#">WORLD OF FLORIS</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
     <!--  ------------------幻燈片----------------------- -->
 
     <div id="navIndicators" class="carousel slide" data-ride="carousel">
@@ -74,8 +90,16 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
+                <!--      <div class="text">
+                    <h5>DISCOVER THE ICONS</h5>
+                    <h2>290 YEARS</h2>
+                    <h5></h5>
+                    <img src="./assets/asset 55.svg" alt="" width="70">
+                </div> -->
                 <img src="./assets/asset 8.jpeg" class="d-block w-100" alt="...">
+
             </div>
+
             <div class="carousel-item">
                 <img src="./assets/asset 9.jpeg" class="d-block w-100" alt="...">
             </div>
@@ -98,7 +122,7 @@
 
     <div class="container three p-5">
         <div class="row justify-content-between align-items-center">
-            <div class="col-md-2 col-12">
+            <div class="col-md-2 col-12 text-center">
                 <h5>FLORIS</h5>
                 <h2>ICONS</h2>
                 <a href="#">DISCOVER</a>
@@ -182,12 +206,12 @@
         </div>
     </div>
     <!-- -----------------------影像橫版--------------------------- -->
-    <div class="container-fluid mt-5">
-        
-        <div class="videogroup video row justify-content-center align-items-center text-center col-md-12 col-12">
-            <div class="bg-video embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="./assets/asset 86.mp4?autoplay=1&loop=1&mute=1 " frameborder="0" allowfullscreen ></iframe>
-          </div>
+    <div class="container-fluid mt-5 videogroup">
+        <div class="bg-video embed-responsive embed-responsive-21by9">
+            <iframe src="./assets/asset 86.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class=" video row justify-content-center align-items-center text-center col-md-12 col-12">
+
             <div class="v-text text-white">
                 <h5>FLORIS</h5>
                 <h2>BRITISH FAMILY PERFUMERS SINCE 1730</h2>
@@ -236,12 +260,13 @@
 
     <!--   ------------------BESPOKE------------------- -->
     <div class="container-fluid v-two mt-5">
-       
+
         <div class="video row align-items-center col-md-12 text-white p-5">
             <div class="v-text ml-5 flex-wrap">
                 <h5>BESPOKE</h5>
                 <h2>FRAGRANCE EXPERIENCES</h2>
-                <p>A unique opportunity to create your own bespoke perfume, our Bespoke Fragrance Customisation Is in an<br>
+                <p>A unique opportunity to create your own bespoke perfume, our Bespoke Fragrance Customisation Is in
+                    an<br>
                     enjoyable perfume experience in London</p>
                 <a href="#">EXPLORE</a>
             </div>
@@ -327,7 +352,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 text-center">
                 <h5>DISCOVER YOUR</h5>
                 <h2>SUMMER SCENT</h2>
                 <a href="#">FIND OUT MORE</a>
@@ -338,11 +363,14 @@
     <!--   ------------------SEX------------------- -->
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center p-5">
-            <div class="col-md-6 text-center">
-                <img src="./assets/asset 49.jpeg" alt="" class="" width="600">
+            <div class="col-md-6 col-12 text-center">
+                <img src="./assets/asset 49.jpeg" alt="" class="" width="80%">
+                <div class="text">
+
+                </div>
             </div>
-            <div class="col-md-6 text-center">
-                <img src="./assets/asset 50.jpeg" alt="" class="" width="800">
+            <div class="col-md-6 col-12 text-center">
+                <img src="./assets/asset 50.jpeg" alt="" class="" width="100%">
             </div>
         </div>
     </div>
@@ -350,7 +378,7 @@
     <!-- ---------------------NOW OPEN------------------ -->
     <div class="container-fluid now-open">
         <div class="video row justify-content-center align-items-center text-center p-5">
-            <div class="v-text bg-white w-25 p-3">
+            <div class="col-12 col-md-3 v-text bg-white w-25 p-3">
                 <h2>NOW OPEN</h2>
                 <h5>89 JERMYN STREET, LONDON</h5>
                 <p>Floris founder Juan Famenias Floris and his wife Elizabeth began selling perfume, combs and shaving
@@ -388,7 +416,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 text-center">
                 <h5>JERMYN STREET</h5>
                 <h2>NOTES</h2>
                 <a href="#">READ OUR BLOG</a>
