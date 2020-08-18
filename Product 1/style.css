@@ -2,44 +2,60 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
 }
-a{
+
+a {
     color: rgb(0, 0, 0);
     text-decoration: none;
+    font-family: 'Nunito', sans-serif;
 }
-a:hover{
+
+a:hover {
     color: rgb(196, 196, 196);
 }
-body{
+
+body {
     background-color: rgb(254, 254, 254);
 }
-h1{
 
+h1,
+h5 {
+    font-family: 'Nunito', sans-serif;
+}
+
+h2 {
+    font-family: 'Playfair Display SC', serif;
+}
+
+p {
+    font-family: 'Thasadith', sans-serif;
 }
 
 header {
     background-color: rgb(255, 255, 255);
     transition: top 0.7s ease-in-out;
     color: rgb(0, 0, 0);
-  }
+}
+
 /* header img{
     
 } */
-header:hover img{
-    filter:invert(100%)
+header:hover img {
+    filter: invert(100%)
 }
+
 .hideUp header {
     top: -400px;
 }
 
-header:hover{
+header:hover {
     color: white;
     background-color: rgba(255, 255, 255, 0);
     transition: 0.5s;
 }
 
-header:hover a{
+header:hover a {
     color: white;
     transition: 0.5s;
 }
@@ -49,12 +65,38 @@ header:hover a{
     height: 500px;
 }
 
+.videogroup {
+    position: relative;
+}
+
 .video {
     height: 600px;
+    background-position: top;
+    background-size: cover;
+
+}
+
+.bg-video {
+    position: absolute;
+    background: white;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -99;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
 }
 
 .v-two {
     background-image: url('./assets/asset\ 36.jpeg');
+    background-position: top;
+    background-size: cover;
+}
+
+.now-open {
+    background-image: url('./assets/asset 85.jpg');
     background-position: top;
     background-size: cover;
 }
