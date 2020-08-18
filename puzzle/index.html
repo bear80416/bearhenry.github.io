@@ -19,7 +19,22 @@
         }
 
         #imgChange {
-            height: 500px;
+            height: 700px;
+        }
+
+        body {
+            
+            margin: 10px;
+        }
+
+      
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 15px;
         }
     </style>
 </head>
@@ -79,19 +94,19 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-3 bg-info text-white">
+            <div class="col-md-3 col-12 bg-info text-white">
                 <h1 class="mt-3">。遊戲開始</h1>
                 <div class="custom-file mt-3">
                     <input type="file" class="custom-file-input" id="customFile">
                     <label class="custom-file-label" for="customFile">選擇您的圖片</label>
                 </div>
-                <div class="col ">
+                <div class="col">
                     <button class="btn btn-warning w-100 mb-5 mt-5"><svg width="1em" height="1em" viewBox="0 0 16 16"
                             class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                         </svg></button>
-                    <button class="btn btn-warning w-100"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                    <button class="btn btn-warning w-100 mb-5"><svg width="1em" height="1em" viewBox="0 0 16 16"
                             class="bi bi-arrow-clockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z" />
@@ -101,18 +116,11 @@
                 </div>
 
             </div>
-            <div id="imgChange" class="col-9 bg-warning d-flex align-items-center justify-content-center">
-                <div class="col" id="puzzle-area">
-                    <canvas width="180" height="135" class="white"></canvas>
-                    <canvas width="180" height="135" class="moveable"></canvas>
-                    <canvas width="180" height="135" class="moveable"></canvas>
-                    <canvas width="180" height="135" class="moveable"></canvas>
-                    <canvas width="180" height="135" class="moveable"></canvas>
-                    <canvas width="180" height="135" class="moveable"></canvas>
-                    <canvas width="180" height="135" class="moveable"></canvas>
-                    <canvas width="180" height="135" class="moveable"></canvas>
-                    <canvas width="180" height="135" class="moveable"></canvas>
-
+            <div id="imgChange" class="col-md-9 col-12 bg-warning d-flex align-items-center justify-content-center">
+                <div class="col" id="puzzle-area" >
+                   <img src="/puzzle/img/monalisa2.jpg" alt="" width="400">
+                    <img id="frame" src="https://mdn.mozillademos.org/files/242/Canvas_picture_frame.png" width="132"
+                        height="150">
                 </div>
 
             </div>
@@ -211,7 +219,10 @@
     </div>
 
     <!-- -----------------------------JS----------------------------- -->
-    <script>
+
+
+
+    <!--     <script>
         var puzzleImg = new Image();
         puzzleImg.src = '/puzzle/img/monalisa.jpg';
         var whiteImg = new Image();
@@ -220,7 +231,7 @@
         var puzzleItems = document.querySelectorAll('#puzzle-area canvas');
 
         var puzzleArea = document.getElementById("puzzle-area");
-
+        
         let imgBase = 3;
         puzzleImg.onload = function () {
             let pWidth = puzzleImg.width / imgBase;
@@ -232,35 +243,37 @@
                     canvas.width = puzzleImg.width / imgBase;
                     canvas.height = puzzleImg.height / imgBase;
                     canvasContent = canvas.getContext('2d')
-                    if (i == 0 && j == 0){
-                        canvasContent.drawImg(whiteImg,j*pWidth,i*pHeight,pWidth,pHeight,0,0,pWidth,pHeight);
-                        canvas.setAttribute('class','white')
-                    }else{
-                        canvasContent.drawImg(puzzleImg,j*pWidth,i*pHeight,pWidth,pHeight,0,0,pWidth,pHeight);
-                        canvas.setAttribute('class','moveable')
+                    if (i == 0 && j == 0) { 
+                        canvasContent.drawImage(whiteImg, j * pWidth, i * pHeight, pWidth, pHeight, 0, 0, pWidth,
+                            pHeight);
+                            console.log(pWidth);
+                        canvas.setAttribute('class', 'white')
+                    } else {
+                        canvasContent.drawImage(puzzleImg, j * pWidth, i * pHeight, pWidth, pHeight, 0, 0, pWidth,
+                            pHeight);
+                        canvas.setAttribute('class', 'moveable')
                     }
                     puzzleArea.appendChild(canvas);
                 }
             }
         }
 
-        window.onload = function(){
+        window.onload = function () {
             var canvasBlocks = document.getElementsByTagName('.moveable');
 
-            for(let block of canvasBlocks)
-            {
-                block.addEventListener('click',function(){
+            for (let block of canvasBlocks) {
+                block.addEventListener('click', function () {
 
                 })
             }
         }
-    </script>
+    </script> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
@@ -272,6 +285,36 @@
             $('[data-toggle="popover"]').popover()
         })
     </script>
+
+<script>
+    var puzzleArea = document.getElementById('puzzle-area');
+    function draw() {
+
+        // Loop through all images
+        for (var i = 0; i < document.images.length; i++) {
+
+            // Don't add a canvas for the frame image
+            if (document.images[i].getAttribute('id') != 'frame') {
+
+                // Create canvas element
+                canvas = document.createElement('canvas');
+                canvas.setAttribute('width', 132);
+                canvas.setAttribute('height', 150);
+
+                // Insert before the image
+                document.images[i].parentNode.insertBefore(canvas, document.images[i]);
+
+                ctx = canvas.getContext('2d');
+
+                // Draw image to canvas
+                ctx.drawImage(document.images[i], 15, 20);
+
+                // Add frame
+                ctx.drawImage(document.getElementById('frame'), 0, 0);
+            }
+        }
+    }
+</script>
 </body>
 
 </html>

@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+body{
+    background-color: rgb(254, 254, 254);
+}
+
+
+.navtop{
+    background-color: rgb(254, 254, 254);
+}
+
+.navtop :hover {
+    color: white;
+    transition: 0.5s;
+}
+
+.three {
+    height: 500px;
+}
+
+.video {
+    height: 600px;
+}
+
+.v-two {
+    background-image: url('./assets/asset\ 36.jpeg');
+    background-position: top;
+    background-size: cover;
+}

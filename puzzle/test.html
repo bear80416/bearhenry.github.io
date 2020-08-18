@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        /* 
+    #puzzle-area * {
+      vertical-align: bottom;
+    } 
+    */
+        #puzzle-area>div {
+            display: table-row;
+        }
+
+        [class^=Position] {
+            display: table-cell;
+            width: 500px;
+            height: 250px;
+            border: 10px solid #000000c0;
+            background-image: url('./img/Andrea2.jpg');
+            cursor: pointer;
+        }
+
+        .Position1 {
+            background-position: left top;
+        }
+
+        .Position2 {
+            background-position: right top;
+        }
+
+        .Position3 {
+            background-position: left bottom;
+        }
+
+        .Position4 {
+            background: white;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div id="puzzle-area">
+                    <div>
+                        <div id="P11" class="Position1"></div>
+                        <div id="P12" class="Position2"></div>
+                    </div>
+                    <div>
+                        <div id="P21" class="Position3"></div>
+                        <div id="P22" class="Position4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div>
+                    <!-- 控制區 -->
+                    <button type="button" name="" id="startBtn" class="btn btn-primary">打亂</button>
+                    <button type="button" name="" id="" class="btn btn-primary">開始</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+    <script>
+        var pone = document.getElementById('P11');
+        var ptwo = document.getElementById('P12');
+        var pthree = document.getElementById('P21');
+        var pfour = document.getElementById('P22');
+        var puzzleArea = document.getElementById('puzzle-area');
+
+        var imgChange = [pone, ptwo, pthree, pfour];
+
+        function start() {
+
+        }
+    </script>
+
+    <!-- <script>
+        //拼圖設定
+        //---1. 設定原始圖
+        var puzzleImg = new Image();
+        puzzleImg.src = './img/Andrea2.jpg';
+        var whiteImg = new Image();
+        whiteImg.src = './img/white.jpg';
+
+        //---2. 生成切片
+        var puzzleItems = document.querySelectorAll('#puzzle-area canvas');
+        console.log(puzzleItems);
+
+        //---取得父元素
+        var puzzleArea = document.getElementById('puzzle-area');
+        
+
+
+        //---設定幾乘幾
+        let imgBase = 2
+
+        puzzleImg.onload = function () {
+            let pWidth = puzzleImg.width / imgBase;
+            let pHeight = puzzleImg.height / imgBase;
+
+            for (let i = 0; i < imgBase; i++) {
+                for (let j = 0; j < imgBase; j++) {
+                    let canvas = document.createElement('canvas');
+                    canvas.width = puzzleImg.width / imgBase;
+                    canvas.height = puzzleImg.height / imgBase;
+                    canvasContent = canvas.getContext("2d");
+                    if (i == 0 && j == 0) //我先寫死
+                    {
+                        canvasContent.drawImage(whiteImg, j * pWidth, i * pHeight, pWidth, pHeight, 0, 0, pWidth,
+                            pHeight);
+                        canvas.setAttribute('class', 'white');
+                    } else {
+                        canvasContent.drawImage(puzzleImg, j * pWidth, i * pHeight, pWidth, pHeight, 0, 0, pWidth,
+                            pHeight);
+                        canvas.setAttribute('class', 'moveable');
+                    }
+                    puzzleArea.appendChild(canvas);
+                }
+            }
+        }
+
+        //window onload ?? (當圖都長完才抓得到canvas)
+        window.onload = function () {
+            var canvasBlocks = document.getElementsByTagName('.moveable');
+            console.log(canvasBlocks);
+
+            for (let block of canvasBlocks) {
+                block.addEventListener('click', function () {
+                    //判斷是否可以被移動
+                    //--1.判斷自己是否在白色塊上下左右???
+
+                    //移動方法
+                    //--1.白色塊與自己交換'位置'
+
+                    //判斷輸贏
+                });
+            }
+
+        }
+        for (let item of puzzleItems) {
+            item.width = 500;
+            item.height = 500;
+
+            let cxt = item.getContext("2d");
+
+            console.log(cxt);
+            cxt.clearRect(0, 0, 100, 100);
+            cxt.drawImage(puzzleImg, 0, 0);
+        }
+    </script> -->
+
+</body>
+
+</html>
