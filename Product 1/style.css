@@ -50,7 +50,7 @@ nav {
 
 nav:hover {
     color: white;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);   
     transition: 0.5s;
 }
 
@@ -59,21 +59,37 @@ nav:hover a {
     transition: 0.5s;
 } */
 
+.brand h1 {
+    font-size: xx-large;
+}
+
+.brand h5 {
+    font-size: x-small;
+    margin-top: -15px;
+}
+
+.brand h2 {
+    font-size: small;
+}
+
 @media only screen and (max-width: 500px) {
-    #disImg{
+    #disImg {
         display: none;
     }
-    .navbar-brand h1{
+
+    .navbar-brand h1 {
         font-size: 10px;
     }
-    .navbar-brand h2{
+
+    .navbar-brand h2 {
         font-size: 3px;
     }
-    .navbar-brand h5{
+
+    .navbar-brand h5 {
         font-size: 4px;
     }
 
-    .carousel-item img{
+    .carousel-item img {
         height: 600px;
     }
 
