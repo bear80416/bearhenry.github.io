@@ -139,36 +139,37 @@
                     <label class="custom-file-label" for="customFile">選擇您的圖片</label>
                 </div> -->
                 <div class="col col-md">
-                    <button class="btn btn-warning w-100 mb-5 mt-5" onclick="puzzleRandom()" id="startBtn"><svg width="1em"
-                            height="1em" viewBox="0 0 16 16" class="bi bi-arrow-clockwise" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
+                    <button class="btn btn-warning w-100 mb-5 mt-5" onclick="puzzleRandom()" id="startBtn"><svg
+                            width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-clockwise"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M3.17 6.706a5 5 0 0 1 7.103-3.16.5.5 0 1 0 .454-.892A6 6 0 1 0 13.455 5.5a.5.5 0 0 0-.91.417 5 5 0 1 1-9.375.789z" />
                             <path fill-rule="evenodd"
                                 d="M8.147.146a.5.5 0 0 1 .707 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 1 1-.707-.708L10.293 3 8.147.854a.5.5 0 0 1 0-.708z" />
                         </svg></button>
-                    <button class="btn btn-warning w-100 mb-5" onclick="startGame()"><svg width="1em" height="1em"
+                    <!--   <button class="btn btn-warning w-100 mb-5" onclick="startGame()"><svg width="1em" height="1em"
                             viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                        </svg></button>
+                        </svg></button> -->
                 </div>
 
             </div>
-            <div id="imgChange" class="col-md-9 col-12 bg-warning d-flex align-items-center text-center">
-                <div class="col-md-12 col-12" id="puzzle-area">
-                    <div>
-                        <div id="P11" class="Position1" onclick="pOne()"></div>
-                        <div id="P12" class="Position2" onclick="pTwo()"></div>
-                    </div>
-                    <div>
-                        <div id="P21" class="Position3" onclick="pThree()"></div>
-                        <div id="P22" class="Position4" onclick="pFour()"></div>
-                    </div>
+            <div id="imgChange" class="col-md-9 col-12 bg-warning d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <div class="col-md col" id="puzzle-area">
+                        <div>
+                            <div id="P11" class="Position1" onclick="pOne()"></div>
+                            <div id="P12" class="Position2" onclick="pTwo()"></div>
+                        </div>
+                        <div>
+                            <div id="P21" class="Position3" onclick="pThree()"></div>
+                            <div id="P22" class="Position4" onclick="pFour()"></div>
+                        </div>
 
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -275,31 +276,42 @@
         var numbers = [1, 2, 3, 4];
 
         function puzzleRandom() {
+
+
             numbers.sort(function () {
                 return Math.random() - 0.5;
             })
+            
             console.log(numbers);
             pone.className = `Position${numbers[0]}`;
             ptwo.className = `Position${numbers[1]}`;
             pthree.className = `Position${numbers[2]}`;
             pfour.className = `Position${numbers[3]}`;
             console.log(pone.className);
-        }
 
-        function startGame() {
             startBtn.onclick = '';
             startBtn.classList = 'btn btn-secondary disabled w-100 mb-5 mt-5';
-            
+
+
         }
+
+
+        /* function startGame() {
+            
+
+        } */
 
         function winGame() {
             if (pone.className == 'Position1' && ptwo.className == 'Position2' && pthree.className == 'Position3' &&
                 pfour.className == 'Position4') {
                 console.log('Win');
+
                 puzzleArea.innerHTML = `<div class="col-md-12 text-center align-items-center">
                     <h1>闖關成功!</h1>
                     <img src="./img/Andrea2.jpg" alt=""></div>`
-            }
+            };
+            startBtn.onclick = 'puzzleRandom()';
+            startBtn.classList = 'btn btn-warning w-100 mb-5 mt-5';
         }
 
         function pOne() {
@@ -311,7 +323,7 @@
                 pthree.className = pone.className;
                 pone.className = 'Position4';
             }
-            winGame();
+            winGame()
         }
 
         function pTwo() {
@@ -323,7 +335,7 @@
                 pfour.className = ptwo.className;
                 ptwo.className = 'Position4';
             }
-            winGame();
+            winGame()
         }
 
         function pThree() {
@@ -335,7 +347,7 @@
                 pfour.className = pthree.className;
                 pthree.className = 'Position4';
             }
-            winGame();
+            winGame()
         }
 
         function pFour() {
@@ -347,57 +359,12 @@
                 pthree.className = pfour.className;
                 pfour.className = 'Position4';
             }
-            winGame();
+            winGame()
         }
     </script>
 
 
-    <!--     <script>
-        var puzzleImg = new Image();
-        puzzleImg.src = '/puzzle/img/monalisa.jpg';
-        var whiteImg = new Image();
-        whiteImg.src = '/puzzle/img/white.jpg';
 
-        var puzzleItems = document.querySelectorAll('#puzzle-area canvas');
-
-        var puzzleArea = document.getElementById("puzzle-area");
-        
-        let imgBase = 3;
-        puzzleImg.onload = function () {
-            let pWidth = puzzleImg.width / imgBase;
-            let pHeight = puzzleImg.height / imgBase;
-
-            for (let i = 0; i < imgBase; i++) {
-                for (let j = 0; j < imgBase; j++) {
-                    let canvas = document.createElement('canvas');
-                    canvas.width = puzzleImg.width / imgBase;
-                    canvas.height = puzzleImg.height / imgBase;
-                    canvasContent = canvas.getContext('2d')
-                    if (i == 0 && j == 0) { 
-                        canvasContent.drawImage(whiteImg, j * pWidth, i * pHeight, pWidth, pHeight, 0, 0, pWidth,
-                            pHeight);
-                            console.log(pWidth);
-                        canvas.setAttribute('class', 'white')
-                    } else {
-                        canvasContent.drawImage(puzzleImg, j * pWidth, i * pHeight, pWidth, pHeight, 0, 0, pWidth,
-                            pHeight);
-                        canvas.setAttribute('class', 'moveable')
-                    }
-                    puzzleArea.appendChild(canvas);
-                }
-            }
-        }
-
-        window.onload = function () {
-            var canvasBlocks = document.getElementsByTagName('.moveable');
-
-            for (let block of canvasBlocks) {
-                block.addEventListener('click', function () {
-
-                })
-            }
-        }
-    </script> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
