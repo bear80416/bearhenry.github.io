@@ -48,8 +48,8 @@
 
         [class^=Position] {
             display: table-cell;
-            width: 250px;
-            height: 250px;
+            width: 167px;
+            height: 168px;
             border: .5px solid #ffffffc0;
             background-image: url('./img/Andrea2.jpg');
             cursor: pointer;
@@ -61,19 +61,38 @@
         }
 
         .Position2 {
-            background-position: right top;
+            background-position: center top;
 
         }
 
         .Position3 {
-            background-position: left bottom;
+            background-position: right top;
 
         }
 
         .Position4 {
+            background-position: left center;
+        }
+
+        .Position5 {
+            background-position: center center;
+        }
+
+        .Position6 {
+            background-position: right center;
+        }
+
+        .Position7 {
+            background-position: left bottom;
+        }
+
+        .Position8 {
+            background-position: center bottom;
+        }
+
+        .Position9 {
             background: white;
             cursor: default;
-
         }
     </style>
 </head>
@@ -162,12 +181,18 @@
                         <div>
                             <div id="P11" class="Position1" onclick="pOne()"></div>
                             <div id="P12" class="Position2" onclick="pTwo()"></div>
+                            <div id="P13" class="Position3" onclick="pThree()"></div>
                         </div>
                         <div>
-                            <div id="P21" class="Position3" onclick="pThree()"></div>
-                            <div id="P22" class="Position4" onclick="pFour()"></div>
+                            <div id="P21" class="Position4" onclick="pFour()"></div>
+                            <div id="P22" class="Position5" onclick="pFive()"></div>
+                            <div id="P23" class="Position6" onclick="pSix()"></div>
                         </div>
-
+                        <div>
+                            <div id="P31" class="Position7" onclick="pSeven()"></div>
+                            <div id="P32" class="Position8" onclick="pEight()"></div>
+                            <div id="P33" class="Position9" onclick="pNite()"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -269,11 +294,16 @@
     <script>
         var pone = document.getElementById('P11');
         var ptwo = document.getElementById('P12');
-        var pthree = document.getElementById('P21');
-        var pfour = document.getElementById('P22');
+        var pthree = document.getElementById('P13');
+        var pfour = document.getElementById('P21');
+        var pfive = document.getElementById('P22');
+        var psix = document.getElementById('P23');
+        var pseven = document.getElementById('P31');
+        var peight = document.getElementById('P32');
+        var pnite = document.getElementById('P33');
         var puzzleArea = document.getElementById('puzzle-area');
         var startBtn = document.getElementById('startBtn');
-        var numbers = [1, 2, 3, 4];
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
         function puzzleRandom() {
 
@@ -281,12 +311,18 @@
             numbers.sort(function () {
                 return Math.random() - 0.5;
             })
-            
+
             console.log(numbers);
             pone.className = `Position${numbers[0]}`;
             ptwo.className = `Position${numbers[1]}`;
             pthree.className = `Position${numbers[2]}`;
             pfour.className = `Position${numbers[3]}`;
+            pfive.className = `Position${numbers[4]}`;
+            psix.className = `Position${numbers[5]}`;
+            pseven.className = `Position${numbers[6]}`;
+            peight.className = `Position${numbers[7]}`;
+            pnite.className = `Position${numbers[8]}`;
+
             console.log(pone.className);
 
             startBtn.onclick = '';
@@ -303,64 +339,149 @@
 
         function winGame() {
             if (pone.className == 'Position1' && ptwo.className == 'Position2' && pthree.className == 'Position3' &&
-                pfour.className == 'Position4') {
-                console.log('Win');
+                pfour.className == 'Position4' && pfive.className == 'Position5' && psix.className == 'Position6' &&
+                pseven.className == 'Position6' && pseven.className == 'Position7' && peight.className == 'Position8' &&
+                pnite.className == 'Position9') {
+                    console.log('Win');
 
-                puzzleArea.innerHTML = `<div class="col-md-12 text-center align-items-center">
+                    puzzleArea.innerHTML = `<div class="col-md-12 text-center align-items-center">
                     <h1>闖關成功!</h1>
                     <img src="./img/Andrea2.jpg" alt=""></div>`
-            };
-            startBtn.onclick = 'puzzleRandom()';
-            startBtn.classList = 'btn btn-warning w-100 mb-5 mt-5';
-        }
+                }; startBtn.onclick = 'puzzleRandom()'; startBtn.classList = 'btn btn-warning w-100 mb-5 mt-5';
+            }
 
-        function pOne() {
-            if (ptwo.className == 'Position4') {
-                ptwo.className = pone.className;
-                pone.className = 'Position4';
+            function pOne() {
+                if (ptwo.className == 'Position9') {
+                    ptwo.className = pone.className;
+                    pone.className = 'Position9';
+                }
+                if (pfour.className == 'Position9') {
+                    pfour.className = pone.className;
+                    pone.className = 'Position9';
+                }
+                winGame()
             }
-            if (pthree.className == 'Position4') {
-                pthree.className = pone.className;
-                pone.className = 'Position4';
-            }
-            winGame()
-        }
 
-        function pTwo() {
-            if (pone.className == 'Position4') {
-                pone.className = ptwo.className;
-                ptwo.className = 'Position4';
+            function pTwo() {
+                if (pone.className == 'Position9') {
+                    pone.className = ptwo.className;
+                    ptwo.className = 'Position9';
+                }
+                if (pthree.className == 'Position9') {
+                    pthree.className = ptwo.className;
+                    ptwo.className = 'Position9';
+                }
+                if (pfive.className == 'Position9') {
+                    pfive.className = ptwo.className;
+                    ptwo.className = 'Position9';
+                }
+                winGame()
             }
-            if (pfour.className == 'Position4') {
-                pfour.className = ptwo.className;
-                ptwo.className = 'Position4';
-            }
-            winGame()
-        }
 
-        function pThree() {
-            if (pone.className == 'Position4') {
-                pone.className = pthree.className;
-                pthree.className = 'Position4';
+            function pThree() {
+                if (ptwo.className == 'Position9') {
+                    ptwo.className = pthree.className;
+                    pthree.className = 'Position9';
+                }
+                if (psix.className == 'Position9') {
+                    psix.className = pthree.className;
+                    pthree.className = 'Position9';
+                }
+                winGame()
             }
-            if (pfour.className == 'Position4') {
-                pfour.className = pthree.className;
-                pthree.className = 'Position4';
-            }
-            winGame()
-        }
 
-        function pFour() {
-            if (ptwo.className == 'Position4') {
-                ptwo.className = pfour.className;
-                pfour.className = 'Position4';
+            function pFour() {
+                if (pone.className == 'Position9') {
+                    pone.className = pfour.className;
+                    pfour.className = 'Position9';
+                }
+                if (pfive.className == 'Position9') {
+                    pfive.className = pfour.className;
+                    pfour.className = 'Position9';
+                }
+                if (pseven.className == 'Position9') {
+                    pseven.className = pfour.className;
+                    pfour.className = 'Position9';
+                }
+                winGame()
             }
-            if (pthree.className == 'Position4') {
-                pthree.className = pfour.className;
-                pfour.className = 'Position4';
+
+            function pFive() {
+                if (ptwo.className == 'Position9') {
+                    ptwo.className = pfive.className;
+                    pfive.className = 'Position9';
+                }
+                if (pfour.className == 'Position9') {
+                    pfour.className = pfive.className;
+                    pfive.className = 'Position9';
+                }
+                if (psix.className == 'Position9') {
+                    psix.className = pfive.className;
+                    pfive.className = 'Position9';
+                }
+                if (peight.className == 'Position9') {
+                    peight.className = pfive.className;
+                    pfive.className = 'Position9';
+                }
+                winGame()
             }
-            winGame()
-        }
+
+            function pSix() {
+                if (pthree.className == 'Position9') {
+                    pthree.className = psix.className;
+                    psix.className = 'Position9';
+                }
+                if (pfive.className == 'Position9') {
+                    pfive.className = psix.className;
+                    psix.className = 'Position9';
+                }
+                if (pnite.className == 'Position9') {
+                    pnite.className = psix.className;
+                    psix.className = 'Position9';
+                }
+                winGame()
+            }
+
+            function pSeven() {
+                if (pfour.className == 'Position9') {
+                    pfour.className = pseven.className;
+                    pseven.className = 'Position9';
+                }
+                if (peight.className == 'Position9') {
+                    peight.className = pseven.className;
+                    pseven.className = 'Position9';
+                }
+
+                winGame()
+            }
+
+            function pEight() {
+                if (pseven.className == 'Position9') {
+                    pseven.className = peight.className;
+                    peight.className = 'Position9';
+                }
+                if (pfive.className == 'Position9') {
+                    pfive.className = peight.className;
+                    peight.className = 'Position9';
+                }
+                if (pnite.className == 'Position9') {
+                    pnite.className = peight.className;
+                    peight.className = 'Position9';
+                }
+                winGame()
+            }
+
+            function pNite() {
+                if (psix.className == 'Position9') {
+                    psix.className = pnite.className;
+                    pnite.className = 'Position9';
+                }
+                if (peight.className == 'Position9') {
+                    peight.className = pnite.className;
+                    pnite.className = 'Position9';
+                }
+                winGame()
+            }
     </script>
 
 
