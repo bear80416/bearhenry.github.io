@@ -34,27 +34,30 @@ p {
 }
 
 /* ---------------------------------------------------------------------- */
-nav {
-    background-color: rgb(255, 255, 255);
-    transition: top 0.7s ease-in-out;
-    color: rgb(0, 0, 0);
+#navbar{
+    color: #fff;
+    transition: 0.5s;
+    filter: invert(100%);
 }
 
-.hideUp nav {
+
+.hideUp #navbar{
     top: -400px;
 }
 
-
-
-.navchange {
-    filter: invert(100%);
-    background-color: rgba(255, 255, 255, 0);  
-    transition: 0.5s;
+.navchange #navbar{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    transition: top 0.7s ease-in-out;
+    filter: invert(0%);
 }
 
-nav:hover a {
-    color: white;
+
+#navbar:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     transition: 0.5s;
+    filter: invert(0%);
 }
 
 .brand h1 {
@@ -91,8 +94,65 @@ nav:hover a {
 
 }
 
-/* ----------------------------------------------------------------------------- */
+/* --------------NAVBAR----------------- */
+.nav-item:hover{
+    border-bottom: 10px soild rgb(58, 58, 156);
+}
 
+
+/* -------------------------購物車--------------------------------------- */
+#menu-control {
+    display: none;
+}
+
+/* --------------------關閉鈕------------------- */
+.close-box .close span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0.6px solid rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    margin: 20px;
+    width: 25px;
+    height: 1px;
+}
+
+.close span:first-child {
+    transform: translateY(0px) rotate(45deg);
+}
+
+.close span:last-child {
+    transform: translateY(0px) rotate(135deg);
+}
+
+/* --------------------關閉鈕------------------- */
+.menu-box .bag {
+    position: fixed;
+    width: 25%;
+    top: 0;
+    height: calc(100vh);
+    bottom: 0;
+    right: -100%;
+    background-color: rgb(255, 255, 255);
+    transition: right .5s .1s;
+    overflow: auto;
+    z-index: 99999999;
+    border-left: 1px solid rgba(0, 0, 0, 0.151);
+}
+
+.menu-box .bag a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+#menu-control:checked~.bag {
+    right: 0;
+}
 
 /* ----------------------------------------------------------------------------- */
 

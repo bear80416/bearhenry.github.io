@@ -23,7 +23,7 @@
 <body class="">
     <!-- ----------------------NavBar--------------------------- -->
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,8 +40,8 @@
                 <h2>BRITSH FAMMILY PERFUMERS SINCE 1730</h2>
             </div>
         </div>
-      
-    
+
+
         <div class="row collapse navbar-collapse" id="navbarSupportedContent">
             <div class="col-md-3 col ml-4" id="disImg"><img src="./assets/asset 66.svg" alt=""></div>
 
@@ -58,9 +58,10 @@
             </div>
             <div class="col-md-3 col mr-4" id="disImg">
                 <div class="row justify-content-end">
-                    <img class="mr-4" src="./assets/asset 71.svg" alt="" width="17">
-                    <img class="mr-4" src="./assets/asset 72.svg" alt="" width="17">
-                    <img class="mr-4" src="./assets/asset 73.svg" alt="" width="17">
+                    <img class="mr-4" src="./assets/asset 71.svg" alt="查詢" width="17">
+                    <img class="mr-4" src="./assets/asset 72.svg" alt="會員" width="17">
+                    <label class="menu mr-4 mt-1" for="menu-control"><img class="" src="./assets/asset 73.svg" alt="購物車"
+                                width="17"></label>
                 </div>
             </div>
             <div class="col-md-12">
@@ -74,11 +75,26 @@
                     <li class="nav-item mr-3"> <a class="nav-link" href="#">SAMPLES</a></li>
                     <li class="nav-item mr-3"> <a class="nav-link" href="#">WORLD OF FLORIS</a></li>
                 </ul>
-
             </div>
         </div>
-
     </nav>
+
+    <div class="menu-box mr-4">  
+        <input type="checkbox" name="" id="menu-control">
+        <nav class="p-4 bag">
+            <div class="close-box">
+                <input type="checkbox" name="" id="menu-control">
+                <label class="close" for="menu-control">
+                    <span></span>
+                    <span></span>
+                </label></div>
+            <h1>YOUR BAG</h1>
+
+            <div class="shopbag">
+                <p>你還沒挑選商品</p>
+            </div>
+        </nav>
+    </div>
     <!--  ------------------幻燈片----------------------- -->
 
     <div id="navIndicators" class="carousel slide" data-ride="carousel">
@@ -93,7 +109,7 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-              
+
                 <img src="./assets/asset 8.jpeg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
@@ -131,82 +147,84 @@
             <div class="col-md-10 col-12">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner text-center">
-                      <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3 mb-3" src="https://picsum.photos/500/500/?random=13">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=12">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=11">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3 mb-3" src="https://picsum.photos/500/500/?random=13">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=12">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=11">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="row justify-content-center">
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=10">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=9">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=8">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=10">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=9">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=8">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="row justify-content-center">
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=7">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=6">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
-                          <div class="item col-md-3">
-                            <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=5">
-                            <h5>FLORAL</h5>
-                            <h2>WHITE ROSE</h2>
-                            <h5>EAU DE TOILETTE</h5>
-                          </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=7">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=6">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                                <div class="item col-md-3">
+                                    <img class="w-100 mb-3" src="https://picsum.photos/500/500/?random=5">
+                                    <h5>FLORAL</h5>
+                                    <h2>WHITE ROSE</h2>
+                                    <h5>EAU DE TOILETTE</h5>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"style="filter:invert(100%)">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"
+                        style="filter:invert(100%)">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"style="filter:invert(100%)">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"
+                        style="filter:invert(100%)">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
                     </a>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
@@ -504,7 +522,7 @@
             </div>
         </div>
         <div class="col-md-12 align-items-center justify-content-center text-center ">
-            
+
             <h2>BRITISH FAMILY PERFUMERS SINCE 1730</h2>
             <div class="row align-items-center justify-content-center text-center mt-4 mb-4">
                 <img class="mx-1" src="./assets/asset 79.svg" alt="" width="20">
@@ -519,7 +537,7 @@
     <div class="container-fluid bg-dark text-white">
         <div class="row justify-content-between align-items-center p-2">
             <div class="col-md-4 row" style="filter:invert(100%)">
-              <!--   <img src="./assets/asset 59.svg" alt="" width="30" class="mr-2">
+                <!--   <img src="./assets/asset 59.svg" alt="" width="30" class="mr-2">
                 <img src="./assets/asset 60.svg" alt="" width="65" class="mr-2">
                 <img src="./assets/asset 61.svg" alt="" width="50" class="mr-2"> -->
                 <img src="./assets/asset 57.svg" alt="" width="30" class="mr-2">
@@ -528,20 +546,20 @@
             <div class="col-md-4 text-center">
                 <h5>ORDERLINE: +44 (0) 3301 340180</h5>
             </div>
-         <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
         </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
     <script src="./All.js"></script>
     <script src="./owlcarousel/owl.carousel.js"></script>
 

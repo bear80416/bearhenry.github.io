@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .menu-box .menu {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            border-radius: 0%;
+            background-color: rgb(255, 255, 255);
+            display: block;
+            transform: scale(1);
+            z-index: 99;
+        }
+
+        .menu-box .menu span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border: 1px solid rgb(0, 0, 0);
+            background-color: rgb(0, 0, 0);
+            margin: auto;
+            width: 32px;
+            height: 1px;
+            transition: .5s;
+        }
+
+        #menu-control {
+            display: none;
+        }
+
+        /* --------------------關閉鈕------------------- */
+        .close-box .close span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 0.6px solid rgb(0, 0, 0);
+            background-color: rgb(0, 0, 0);
+            margin: 20px;
+            width: 25px;
+            height: 1px;
+        }
+
+        .close span:first-child {
+            transform: translateY(0px) rotate(45deg);
+        }
+
+        .close span:last-child {
+            transform: translateY(0px) rotate(135deg);
+        }
+
+        /* --------------------關閉鈕------------------- */
+        .menu-box nav {
+            position: fixed;
+            width: 25%;
+            top: 0;
+            height: calc(100vh);
+            bottom: 0;
+            right: -100%;
+            background-color: rgb(255, 255, 255);
+            transition: right 1s .2s;
+            overflow: auto;
+            z-index: 99;
+            border-left: 1px solid rgba(0, 0, 0, 0.151);
+        }
+
+        .menu-box nav a {
+            display: block;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+
+        #menu-control:checked~nav {
+            right: 0;
+        }
+
+        /* ----------------漢堡---------------- */
+        .menu-box .menu span:first-child {
+            transform: translateY(-6px);
+        }
+
+        .menu-box .menu span:last-child {
+            transform: translateY(6px);
+        }
+
+        #menu-control:checked~.menu {
+            background-color: rgb(124, 207, 255);
+            border-radius: 50%;
+        }
+
+        #menu-control:checked~.menu span:first-child {
+            transform: translateY(0px) rotate(45deg);
+        }
+
+        #menu-control:checked~.menu span:last-child {
+            transform: translateY(0px) rotate(135deg);
+        }
+
+        #menu-control:checked~.menu span:nth-child(2) {
+            display: none;
+        }
+
+        /* ----------------漢堡---------------- */
+    </style>
+</head>
+
+<body class="bg-warning">
+
+
+    <div class="menu-box">
+        <input type="checkbox" name="" id="menu-control">
+        <label class="menu" for="menu-control">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="p-4">
+            <div class="close-box">
+                <input type="checkbox" name="" id="menu-control">
+                <label class="close" for="menu-control">
+                    <span></span>
+                    <span></span>
+                </label></div>
+            <h1>YOUR BAG</h1>
+
+            <div class="shopbag">
+                <p>你還沒挑選商品</p>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

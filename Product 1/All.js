@@ -23,12 +23,23 @@ $(document).ready(function () {
 
 var bodyClass = document.body.classList,
     lastScrollY = 0;
+
 window.addEventListener('scroll', function () {
-    var st = this.scrollY;if (st < lastScrollY) {
+    var st = this.scrollY;
+    if (st < lastScrollY) {
         bodyClass.remove('hideUp');
     } else {
         bodyClass.add('hideUp');
     }
     lastScrollY = st;
+    console.log(lastScrollY);
 
+    if(lastScrollY<=40)
+    {
+        bodyClass.remove('navchange');
+        
+    }else{
+        bodyClass.add('navchange');
+        
+    }
 })
