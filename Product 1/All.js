@@ -22,10 +22,9 @@ $(document).ready(function () {
 //卷軸向下滑動，NAV自動收起來
 
 var bodyClass = document.body.classList,
-lastScrollY = 0;
+    lastScrollY = 0;
 window.addEventListener('scroll', function () {
-    var st = this.scrollY;
-    if (st < lastScrollY) {
+    var st = this.scrollY;if (st < lastScrollY) {
         bodyClass.remove('hideUp');
     } else {
         bodyClass.add('hideUp');

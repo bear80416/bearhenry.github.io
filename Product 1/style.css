@@ -44,20 +44,18 @@ nav {
     top: -400px;
 }
 
-/* nav:hover img {
-    filter: invert(100%)
-}
 
-nav:hover {
-    color: white;
-    background-color: rgba(255, 255, 255, 0);   
+
+.navchange {
+    filter: invert(100%);
+    background-color: rgba(255, 255, 255, 0);  
     transition: 0.5s;
 }
 
 nav:hover a {
     color: white;
     transition: 0.5s;
-} */
+}
 
 .brand h1 {
     font-size: xx-large;
@@ -72,25 +70,23 @@ nav:hover a {
     font-size: small;
 }
 
+#undisImg{
+    display: none;
+}
+
 @media only screen and (max-width: 500px) {
     #disImg {
         display: none;
     }
 
-    .navbar-brand h1 {
-        font-size: 10px;
-    }
-
-    .navbar-brand h2 {
-        font-size: 3px;
-    }
-
-    .navbar-brand h5 {
-        font-size: 4px;
+    #undisImg{
+        display: block;
     }
 
     .carousel-item img {
+        
         height: 600px;
+    
     }
 
 }
@@ -99,9 +95,7 @@ nav:hover a {
 
 
 /* ----------------------------------------------------------------------------- */
-.three {
-    height: 500px;
-}
+
 
 /* ----------------------------------------------------------------------------- */
 .videogroup {
@@ -144,4 +138,14 @@ nav:hover a {
     background-image: url('./assets/asset 85.jpg');
     background-position: top;
     background-size: cover;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.GIFT h5{
+    font-size: 12px;
+}
+
+.GIFT h2{
+    font-size: 15px;
 }
