@@ -64,7 +64,7 @@
         /* --------------------關閉鈕------------------- */
         .menu-box nav {
             position: fixed;
-            width: 25%;
+            width: 24%;
             top: 0;
             height: calc(100vh);
             bottom: 0;
@@ -117,6 +117,30 @@
         }
 
         /* ----------------漢堡---------------- */
+        .row .shopbag-info {
+            position: relative;
+        }
+
+        .shopbag-info span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border: .5px solid rgba(0, 0, 0, 0.144);
+            background-color: rgba(0, 0, 0, 0.123);
+            margin: auto;
+            width: 100%;
+            height: 1px;
+        }
+
+        .shopbag-info span:first-child {
+            transform: translateY(-16px);
+        }
+
+        .shopbag-info span:last-child {
+            transform: translateY(16px);
+        }
     </style>
 </head>
 
@@ -130,17 +154,88 @@
             <span></span>
             <span></span>
         </label>
-        <nav class="p-4">
+
+        <nav class="shopbag-group p-4">
             <div class="close-box">
                 <input type="checkbox" name="" id="menu-control">
                 <label class="close" for="menu-control">
                     <span></span>
                     <span></span>
                 </label></div>
-            <h1>YOUR BAG</h1>
 
-            <div class="shopbag">
-                <p>你還沒挑選商品</p>
+            <div class="shop-items h-75 overflow-auto">
+                <h1 class="">YOUR BAG</h1>
+                <div class="row">
+                    <div class="shopbag-img"><img src="./assets/asset 13.webp" alt="" width="80"></div>
+                    <div class="shopbag-info">
+                        <h5>71/72 100ml</h5>
+                        <h5>EAU DE PARF UM</h5>
+                        <h5>£140.00</h5>
+                        <div class="shopbag-info text-center">
+                            <span></span>
+                            <button class="btn mr-4">-</button>1<button class="btn ml-4">+</button>
+                            <span></span>
+                        </div>
+                        <label for="">REMOVE</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="shopbag-img"><img src="./assets/asset 13.webp" alt="" width="80"></div>
+                    <div class="shopbag-info">
+                        <h5>71/72 100ml</h5>
+                        <h5>EAU DE PARF UM</h5>
+                        <h5>£140.00</h5>
+                        <div class="shopbag-info text-center">
+                            <span></span>
+                            <button class="btn mr-4">-</button>1<button class="btn ml-4">+</button>
+                            <span></span>
+                        </div>
+                        <label for="">REMOVE</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="shopbag-img"><img src="./assets/asset 13.webp" alt="" width="80"></div>
+                    <div class="shopbag-info">
+                        <h5>71/72 100ml</h5>
+                        <h5>EAU DE PARF UM</h5>
+                        <h5>£140.00</h5>
+                        <div class="shopbag-info text-center">
+                            <span></span>
+                            <button class="btn mr-4">-</button>1<button class="btn ml-4">+</button>
+                            <span></span>
+                        </div>
+                        <label for="">REMOVE</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="shopbag-img"><img src="./assets/asset 13.webp" alt="" width="80"></div>
+                    <div class="shopbag-info">
+                        <h5>71/72 100ml</h5>
+                        <h5>EAU DE PARF UM</h5>
+                        <h5>£140.00</h5>
+                        <div class="shopbag-info text-center">
+                            <span></span>
+                            <button class="btn mr-4">-</button>1<button class="btn ml-4">+</button>
+                            <span></span>
+                        </div>
+                        <label for="">REMOVE</label>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-checkout h-25 text-center ">
+                
+                <div class="shopbag-info align-items-bottom">
+
+                    <div class="shop-price row justify-content-between mx-2">
+
+                        <h5>SUBTOTAL:</h5>
+                        <h5>£140.00</h5>
+                    </div>
+
+                    <button class="btn w-100 btn-info">VIEW CART</button>
+                    <label class=""> <u> CHECK OUT </u> </label>
+                </div>
+
             </div>
         </nav>
     </div>

@@ -10,23 +10,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
-        .card {
+        .img-group {
+            background-image: url('./assets/asset\ 19.png');
+            background-size: 100px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
+        .card:hover .img-group {
+            background-position-x: 3%;
+            background-size: 250px;
+            transition: .5s;
         }
     </style>
     <title>Hello, world!</title>
 </head>
 
 <body>
-
-    <div class="card col-md-3 border border-dark">
-        <img src="./assets/asset 13.webp" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-            <p class="card-text">FLORIS</p>
-            <h1>WHITE ROSE</h1>
-            <p class="card-text">EAU DE TOILETTE</p>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="card col-md-3 border border-white">
+                <div class="img-group">
+                    <img src="./assets/asset 13.webp" class="card-img-top p-3" alt="...">
+                </div>
+                <div class="card-body text-center">
+                    <p class="card-text text-danger">FLORIS</p>
+                    <p class="card-text">WHITE ROSE</p>
+                    <p class="card-text">EAU DE TOILETTE</p>
+                </div>
+            </div>
         </div>
     </div>
+
 
 
     <!-- Optional JavaScript -->
